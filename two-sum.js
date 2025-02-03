@@ -4,6 +4,8 @@
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 // You can return the answer in any order.
 
+// Questions: negative numbers?
+// Questions: what if no solution?
 
 const helperSum = () => {};
 
@@ -30,8 +32,31 @@ const twoSum = (nums, target) => {
     // P: then call Array.method() to find if that difference exists in the array.
     // if found, then just return that element (SINCE only 1 solution possible).
 
+    const returnIndicesArray = [];
+
+    // Final array methods used are .forEach() and .indexOf()
+
+    // O(n) time complexity.
+    // O(1) space complexity ~ since modifies elements in-place
+    nums.forEach((elem, index) => {
+        // subtract from the target sum.
+        const searchDiff = target-elem;
+        // then check if that difference exists in the array.
+        const searchDiffIndex = nums.indexOf(searchDiff);
+
+        if (searchDiffIndex !== -1) {
+            // only enters if valid searchDiffIndex
+            returnIndicesArray.push(index, searchDiffIndex);
+        }
+
+    });
 
 
+    // .find() ~ since doesn't create new array (O(1)) constant time
+    // .find() ~ best-case O(1) if found in the first element, O(n) if found at end of array
+
+    // .findLast() ~ starts from the end.
 
     // requires explicit return statement.
+    return returnIndicesArray;
 };
