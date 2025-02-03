@@ -28,6 +28,7 @@ const twoSum = (nums, target) => {
         const value = nums[index];
         const searchDiff = target - value; // Calculate the difference
         // Check if the difference exists in the map (means we've seen the other number before)
+        // note: this is the if-short-circuit technique.
         if (seen.has(searchDiff)) {
             // If the pair is found, return the indices
             return [seen.get(searchDiff), index];
