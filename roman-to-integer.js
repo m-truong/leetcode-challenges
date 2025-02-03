@@ -72,6 +72,14 @@ const subtractionRomanNumerals = new Map(
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
 
+
+// Time Complexity:
+// 	•	O(n) (Linear Time) → Where n is the number of elements in the input array.
+// 	•	The constructor iterates over the array and inserts each key-value pair into the Map, leading to O(n) insertion cost.
+
+// Space Complexity:
+// 	•	O(n) (Linear Space) → The Map stores n key-value pairs, consuming O(n) memory.
+
 /**
  * @param {string} s
  * @return {number}
