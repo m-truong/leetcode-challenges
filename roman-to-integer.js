@@ -9,6 +9,11 @@
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
 
+// constraints:
+// 1 <= s.length <= 15
+// s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+// It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
 // questions:
 
 // edge-cases: (4) and (9) are edge-cases! IV and IX.
