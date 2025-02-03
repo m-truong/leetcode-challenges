@@ -10,11 +10,25 @@
 // Given a roman numeral, convert it to an integer.
 
 // constraints:
-// 1 <= s.length <= 15
-// s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
-// It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+// 1) 1 <= s.length <= 15
+// TCs: 'X' = 10, 'IV' = 4, 'IX' = 9, 'LVIII' = 58, 'MCMXCIV' = 1994
+// TCs: 'III' = 3 (only positive Roman numbers)
+// questions: input cannot be empty. min-length is '1' char
 
-// questions:
+// 2) (s) contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+// at most
+
+
+// 3) It is guaranteed that 's' is a valid roman numeral in the range [1, 3999].
+// between 1, and 3999
+// ex: MMMCMXCIX = 3999
+// ex: I = 1
+
+// task: Given a roman numeral 'string', convert it to an integer (i.e. not a floating-point number).
+// input: string
+// output: number
+
+// questions: only positive Roman numbers?
 
 // edge-cases: (4) and (9) are edge-cases! IV and IX.
 
