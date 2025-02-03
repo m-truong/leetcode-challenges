@@ -33,6 +33,14 @@ var isPalindrome = function(x) {
     // this splits all the characters
     const arrayIntegers = intString.split('');
     console.log('check array of chars' , arrayIntegers);
-    // now call reverse
-    const reversedArray = arrayIntegers.reverse();
+    // now call reverse, and doesn't COPY into a new array, BUT MUTATES in-place.
+    const reversedArray = arrayIntegers.toReversed();
+
+    // The join() method of Array instances creates and returns a new string by concatenating all of the elements in this array,
+
+    // must use '' seperator, else it'll be a comma-separated string.
+    const reversedString = reversedArray.join(''); // returns new string
+
+    // returns true if Palindrome, false otherwise.
+    return (intString === reversedString); // this comparison will return a boolean
 };
