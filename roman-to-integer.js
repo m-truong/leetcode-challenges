@@ -9,10 +9,20 @@
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
 
+// Create a Map with initial 'key-value' pairs
+const subtractionRomanNumerals = new Map(
+    ['IV', 4],
+    ['IX', 9],
+    ['XL', 50],
+    ['XC', 90],
+    ['CD', 400],
+    ['CM', 900]
+);
+
 // constraints:
 // 1) 1 <= s.length <= 15
 // TCs: 'X' = 10, 'IV' = 4, 'IX' = 9, 'LVIII' = 58, 'MCMXCIV' = 1994
-// TCs: 'III' = 3 (only positive Roman numbers)
+// TCs: 'III' = 3 (only positive Roman numbers) // (cannot be negative)
 // questions: input cannot be empty. min-length is '1' char
 
 // 2) (s) contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
@@ -21,7 +31,7 @@
 
 // 3) It is guaranteed that 's' is a valid roman numeral in the range [1, 3999].
 // between 1, and 3999
-// ex: MMMCMXCIX = 3999
+// ex: MMMCMXCIX = 3999, split would be 'M'1000, + 'M'1000, + 'M'1000, + 'CM'900, + 'XC'90, 'IX'9
 // ex: I = 1
 
 // task: Given a roman numeral 'string', convert it to an integer (i.e. not a floating-point number).
@@ -32,15 +42,50 @@
 
 // edge-cases: (4) and (9) are edge-cases! IV and IX.
 
-// plan:
+// pseudo-plan:
+// use a HashMap (very powerful data-structure)
+// there are only 6 instances (where Roman number uses substraction)
+// since we already know those 6 instances, we can store them in a HashMap
+// taking the string, we can parse it and find the corresponding number
+// Using the roman numbers, we can then "addition" them all to get the integer value.
+// going from left to right
 
+// keep it under O(n^2) time-complexity
+// iterate over the string to detect the six subtraction-roman-numberal instances.
+// extract those instances from the input 's'
+// separate after extracting those instances
+// should only be left with the 'single roman numeral' instances
 
+// then those single roman numerals should be stored as elements in an array
+// iterate of this array and add them all up to THE running sum
 
+// might need 2 hashmaps
+
+// Key Features of Map:
+// •	Maintains the insertion order of elements.
+// •	Allows any type of key (unlike objects, which convert keys to strings).
+// •	Has built-in methods for easy manipulation.
+
+// There are six instances where subtraction is used:
+// I can be placed before V (5) and X (10) to make 4 and 9.
+// X can be placed before L (50) and C (100) to make 40 and 90.
+// C can be placed before D (500) and M (1000) to make 400 and 900.
+// Given a roman numeral, convert it to an integer.
 
 /**
  * @param {string} s
  * @return {number}
  */
 var romanToInt = function(s) {
+    console.log('here', s);
 
+    // Create a Map with initial 'key-value' pairs
+    const subtractionRomanNumerals = new Map(
+        ['IV', 4],
+        ['IX', 9],
+        ['XL', 50],
+        ['XC', 90],
+        ['CD', 400],
+        ['CM', 900]
+    );
 };
