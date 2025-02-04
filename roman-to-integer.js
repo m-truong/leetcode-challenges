@@ -87,7 +87,7 @@ const subtractionRomanNumerals = new Map(
 var romanToInt = function(s) {
     console.log('here', s);
 
-    // Create a Map with initial 'key-value' pairs
+    // Create a Map with initial 'key-value' pairs // O(n) time-space // since using iterable
     const subtractionRomanNumerals = new Map(
         ['IV', 4],
         ['IX', 9],
@@ -95,5 +95,16 @@ var romanToInt = function(s) {
         ['XC', 90],
         ['CD', 400],
         ['CM', 900]
+    );
+
+    // Create another HashMap for the values for the Roman Numerals?
+    const romanNumerals = new Map(
+        ['I', 1],
+        ['V', 5],
+        ['X', 10],
+        ['L', 50],
+        ['C', 100],
+        ['D', 500],
+        ['M', 1000]
     );
 };
