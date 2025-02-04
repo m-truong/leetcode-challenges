@@ -118,7 +118,7 @@ var romanToInt = function(s) {
     const subtractionRomanNumerals = new Map([
         ['IV', 4],
         ['IX', 9],
-        ['XL', 50],
+        ['XL', 40],
         ['XC', 90],
         ['CD', 400],
         ['CM', 900]
