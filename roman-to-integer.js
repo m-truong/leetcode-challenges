@@ -145,8 +145,18 @@ var romanToInt = function(s) {
     // JS RegExp: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
     // Brackets are used to find a range of characters:
 
+    // store the regexp in a pattern 'for matching text with a pattern
+    const romanPattern = 'IV|IX|XL|XC|CD|CM|I|V|X|L|C|D|M';
+    // best clean-readable way to create a RegExp object
+    // outputs: "romanRegExp" Object used to match patterns in strings
+    const romanRegExp = new RegExp(romanPattern, 'g');
 
-    subtractionRomanNumerals.keys();
-    romanNumerals.keys();
-    // s.
+    // pass the RegExp object as input into a string method call that uses .matches() // string.match(requires a RegExp object)
+    const romanNumeralArray = s.match(romanRegExp);
+    // add logs for manual-step-by-step debugging
+    console.log('checking array of roman numerals', romanNumeralArray);
+
 };
+
+// use the terminal to run the code
+const input = process.argv[2] // reads input from terminal
