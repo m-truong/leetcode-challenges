@@ -111,8 +111,9 @@ const subtractionRomanNumerals = new Map(
  * @return {number}
  */
 var romanToInt = function(s) {
-    console.log('here', s);
+    console.log('starting here', s);
 
+    let integerRunningSum = 0;
     // Create a Map with initial 'key-value' pairs // O(n) time-space // since using iterable
     const subtractionRomanNumerals = new Map(
         ['IV', 4],
@@ -156,6 +157,22 @@ var romanToInt = function(s) {
     // add logs for manual-step-by-step debugging
     console.log('checking array of roman numerals', romanNumeralArray);
 
+    // I should now have a split array of RomanNumeral characters.
+
+    // Now I have to just iterate over this new ArrayRomanNumerals
+    // and as I iterate, check the two HashMaps for the corresponding valuesand then add them to a running sum.
+
+    for (let romanCharacter of romanNumeralArray) {
+        // do the edge-case block first
+        if (subtractionRomanNumerals.has(romanCharacter)) {
+            integerRunningSum += subtractionRomanNumerals.get(romanCharacter);
+        } else {
+            // if its not in the subtr
+            integerRunningSum += romanNumerals.get(romanCharacter);
+        }
+    }
+
+    return integerRunningSum;
 };
 
 // use the terminal to run the code
