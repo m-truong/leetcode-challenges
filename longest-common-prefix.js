@@ -43,7 +43,14 @@ var longestCommonPrefix = function(strs) {
         return longestCommonPrefix;
     }
 
-
+    // plan:
+    // assume the first string if it gets past the edge case is the longest prefix
+    // then iterate over the rest of the strings, and use the substring() method
+    // see if there's a substring that matches the next string in the array,
+    // if ONLY a portion matches, then trim the characters so that the longest ASSUMED prefix
+    // ...continues to get shorter and shorter.
+    // if the next doesn't have the current prefix, then it still holds true
+    // BUT WHAT IF ... in element index[30] there's a longer prefix, and it becomes MORE common through to the 200th element in the array?
 
 };
 
