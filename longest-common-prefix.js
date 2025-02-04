@@ -35,13 +35,13 @@
  */
 var longestCommonPrefix = function(strs) {
     console.log('starting here',strs);
-
     let longestCommonPrefix = "";
-
     // try code-strat of detecting edge-case early once
     if (strs.length === 1 && strs[0].length === 0) {
         return longestCommonPrefix;
     }
+    // Edge-Case for if [] array
+    if (strs.length == 0) return "";
 
     // plan:
     // assume the first string if it gets past the edge case is the longest prefix
@@ -52,6 +52,20 @@ var longestCommonPrefix = function(strs) {
     // if the next doesn't have the current prefix, then it still holds true
     // BUT WHAT IF ... in element index[30] there's a longer prefix, and it becomes MORE common through to the 200th element in the array?
 
+    // Assume ENTIRE 1st 'string' in array is 'prefix'
+    longestCommonPrefix = strs[0]
+    // Start iterable at 2ND 'string'
+    for (let k = 1; k < strs.length; k ++) {
+        console.log(`This is iteration ${k}, and the prefix is now ${longestCommonPrefix}`)
+        // Keeps running this while-loop and
+            // and keeps shortening the prefix UNTIL it gets to 0
+            // CHECKING TO SEE IF NOT INSIDE, HAS to exist at firstChar element!
+        while (strs[k].indexOf(longestCommonPrefix) != 0) {
+            longestCommonPrefix = longestCommonPrefix.substring(0, longestCommonPrefix.length-1)
+            if (longestCommonPrefix.length === 0) return "";
+        }
+    }
+    return longestCommonPrefix;
 };
 
 // use the terminal to run the code
