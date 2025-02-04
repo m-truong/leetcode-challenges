@@ -21,13 +21,26 @@
 // plan:
 // create reassignable string // initialized "" empty string
 // reassign at the end of algo-logic
+// what's the longest possible prefix of English words?
+// the prefix can be very long; so cannot pre-determine the prefix
 
+// instead each element is a string of characters
 
 /**
  * @param {string[]} strs
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
+    console.log('starting here',strs);
+
+    let longestCommonPrefix = "";
+
+    // try code-strat of detecting edge-case early once
+    if (strs.length === 1 && strs[0].length === 0) {
+        return longestCommonPrefix;
+    }
+
+
 
 };
 
