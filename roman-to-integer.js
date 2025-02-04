@@ -136,10 +136,17 @@ var romanToInt = function(s) {
 
     // plan:
     // take input string
-    // and split it into an array of 'character'
+    // and split it into an array of 'character' using RegExp
     // but must be split by the matching romanNumeral HashMap keys
     // then iterate over the array of roman numerals
     // as i iterate over them ~ then add them to a running sum
     // return that running sum as the converted integer value
 
+    // JS RegExp: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+    // Brackets are used to find a range of characters:
+
+
+    subtractionRomanNumerals.keys();
+    romanNumerals.keys();
+    // s.
 };
