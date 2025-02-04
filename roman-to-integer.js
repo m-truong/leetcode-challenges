@@ -10,14 +10,14 @@
 // Given a roman numeral, convert it to an integer.
 
 // Create a Map with initial 'key-value' pairs
-const subtractionRomanNumerals = new Map(
-    ['IV', 4],
-    ['IX', 9],
-    ['XL', 50],
-    ['XC', 90],
-    ['CD', 400],
-    ['CM', 900]
-);
+// const subtractionRomanNumerals = new Map(
+//     ['IV', 4],
+//     ['IX', 9],
+//     ['XL', 50],
+//     ['XC', 90],
+//     ['CD', 400],
+//     ['CM', 900]
+// );
 
 // constraints:
 // 1) 1 <= s.length <= 15
@@ -115,17 +115,17 @@ var romanToInt = function(s) {
 
     let integerRunningSum = 0;
     // Create a Map with initial 'key-value' pairs // O(n) time-space // since using iterable
-    const subtractionRomanNumerals = new Map(
+    const subtractionRomanNumerals = new Map([
         ['IV', 4],
         ['IX', 9],
         ['XL', 50],
         ['XC', 90],
         ['CD', 400],
         ['CM', 900]
-    );
+    ]);
 
     // Create another HashMap for the values for the Roman Numerals?
-    const romanNumerals = new Map(
+    const romanNumerals = new Map([
         ['I', 1],
         ['V', 5],
         ['X', 10],
@@ -133,7 +133,7 @@ var romanToInt = function(s) {
         ['C', 100],
         ['D', 500],
         ['M', 1000]
-    );
+    ]);
 
     // plan:
     // take input string
