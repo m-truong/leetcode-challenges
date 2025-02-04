@@ -43,24 +43,25 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
-    console.log('starting here',strs);
+    console.log('starting here', strs);
     let longestCommonPrefix = "";
     // try code-strat of detecting edge-case early once
     if (strs.length === 1 && strs[0].length === 0) {
         return longestCommonPrefix;
     }
     // Edge-Case for if [] array
-    if (strs.length == 0) return "";
+    if (strs.length === 0) return longestCommonPrefix;;
 
     // Assume ENTIRE 1st 'string' in array is 'prefix'
     longestCommonPrefix = strs[0]
+    console.log(`assuming longest is`, longestCommonPrefix);
     // Start iterable at 2ND 'string'
     for (let k = 1; k < strs.length; k ++) {
         console.log(`This is iteration ${k}, and the prefix is now ${longestCommonPrefix}`)
         // Keeps running this while-loop and
             // and keeps shortening the prefix UNTIL it gets to 0
             // CHECKING TO SEE IF NOT INSIDE, HAS to exist at firstChar element!
-        while (strs[k].indexOf(longestCommonPrefix) != 0) {
+        while (strs[k].indexOf(longestCommonPrefix) !== 0) {
             longestCommonPrefix = longestCommonPrefix.substring(0, longestCommonPrefix.length-1)
             if (longestCommonPrefix.length === 0) return "";
         }
@@ -69,9 +70,9 @@ var longestCommonPrefix = function(strs) {
 };
 
 // use the terminal to run the code
-const input = process.argv[2] // reads input from terminal
+const input = process.argv.slice[2] // reads input from terminal
 
-if (input) {
+if (input.length > 0) {
     const longestPrefix = longestCommonPrefix(input);
     console.log(`the longest-common-prefix ${input} is ${longestPrefix}`);
 } else {
