@@ -160,3 +160,10 @@ var romanToInt = function(s) {
 
 // use the terminal to run the code
 const input = process.argv[2] // reads input from terminal
+
+if (input) {
+    const integerOutput = romanToInt(input);
+    console.log(`the integer value of ${input} is ${integerOutput}`);
+} else {
+    console.log('please provide a valid Roman Numeral input to convert to an integer');
+}
