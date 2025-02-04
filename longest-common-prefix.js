@@ -24,7 +24,10 @@
 // what's the longest possible prefix of English words?
 // the prefix can be very long; so cannot pre-determine the prefix
 
-// instead each element is a string of characters
+// instead each element is a string of characters, so would have to compare the characters...
+// break each element string into it's characters
+// then concatenate the characters into a new prefix-string
+
 
 /**
  * @param {string[]} strs
