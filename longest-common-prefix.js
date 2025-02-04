@@ -9,6 +9,8 @@
 // edge:
 // array[] of strings
 // return: string
+// can be empty string
+// worst-edge-case will be [""] strs.length = 1, strs[i].length = 0
 
 // testcases:
 // input: strs = ["flower","flow","flight"] => output: "fl"
@@ -19,3 +21,22 @@
 // plan:
 // create reassignable string // initialized "" empty string
 // reassign at the end of algo-logic
+
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+
+};
+
+// use the terminal to run the code
+const input = process.argv[2] // reads input from terminal
+
+if (input) {
+    const longestPrefix = longestCommonPrefix(input);
+    console.log(`the longest-common-prefix ${input} is ${longestPrefix}`);
+} else {
+    console.log('please provide a valid array of strings to find the longest common prefix');
+}
