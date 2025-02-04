@@ -111,12 +111,30 @@ var romanToInt = function(s) {
     // .set(key, value) - Adding/Updating an Entry
     // •	Time Complexity: O(1) → Map uses a hash table internally, so inserting or updating a key-value pair is done in constant time.
 	// •	Space Complexity: O(1) per entry, but O(n) overall if multiple values are inserted.
-
     // .get(key) - Retrieving a Value
     // 	•	Time Complexity: O(1) → Uses a hash table lookup.
 	// •	Space Complexity: O(1) → No extra storage is allocated.
-
     // .has(key) - Checking for Key Existence
     // 	•	Time Complexity: O(1) → Constant-time lookup.
 	// •	Space Complexity: O(1) → No additional memory usage.
+    // .delete(key) - Removing a Key-Value Pair
+    // 	•	Time Complexity: O(1) → Removing an entry is a constant-time operation in a hash table.
+	// •	Space Complexity: O(1) → The key-value pair is removed, freeing up space.
+
+    //     for (let key of myMap.keys()) {
+    //   console.log(key);
+    // }
+
+    // for (let value of myMap.values()) {
+    //   console.log(value);
+    // }
+
+    // for (let [key, value] of myMap.entries()) {
+    //   console.log(key, value);
+    // }
+
+    // myMap.forEach((value, key) => {
+    //   console.log(key, value);
+    // });
+
 };
