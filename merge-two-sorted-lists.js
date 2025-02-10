@@ -25,9 +25,12 @@
 // Then add them as next values to the new sorted array of the ListNodes after merging to other lists of LinkedList Nodes
 
 
-function ListNode (value, next) {
-    this.value = value === undefined ? 0 : value; // constructor defaults to value=0
-    this.next = next === undefined ? null : value; // contrsuctor defaults to next=head or tail node
+// should use JS ES6 class syntax 'class' keyword
+class ListNode {
+    constructor (value, next) {
+        this.value = value === undefined ? 0 : value; // constructor defaults to value=0
+        this.next = next === undefined ? null : value; // contrsuctor defaults to next=head or tail node
+    }
 }
 
 /**
