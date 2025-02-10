@@ -27,11 +27,20 @@
 
 // should use JS ES6 class syntax 'class' keyword
 // this is the best-practice for writing a class constructor in a single JS file (newer JS version environment)
+// type ListNode = {
+//     value: number;
+//     next: ListNode;
+// }
+
 class ListNode {
-    constructor (value, next) {
+    value: number;
+    next: ListNode | null;
+
+    constructor (value?: number, next?: ListNode | null) {
         this.value = value === undefined ? 0 : value; // constructor defaults to value=0
         this.next = next === undefined ? null : next; // contrsuctor defaults to next=head or tail node
     }
+
 }
 
 /**
@@ -39,11 +48,16 @@ class ListNode {
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(list1, list2) {
+var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
 
-    console.log('starting here', list1.next, list2.val)
+    const list3 = new ListNode();
+    console.log('TODO: print inside of nodes');
+
+
+    // console.log('starting here', list1.next, list2.val)
     // outputs: { list2 } , {1}}}
 
 
-    console.log('TODO: print inside of nodes');
+
+    return list3;
 };
