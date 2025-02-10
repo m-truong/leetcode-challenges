@@ -56,6 +56,24 @@ class ListNode {
  */
 var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
 
+    // Create the head of the new merged linked-list
+    // ...by combining all the ListNodes from the original two <LLs>-<LLs>.
+    // problem:
+
+    // create main-logic of comparing the two Node values
+    // i.e. >>>> <<<<<<
+
+    // create secondary logic for changing the node values
+
+    // create tertiary logic for checking if the end tail-node is ever reached.
+
+    // You are given the heads of two sorted linked lists list1 and list2.
+    // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+
+
+
+
     const list3 = new ListNode();
     console.log('TODO: print inside of nodes');
 
