@@ -61,3 +61,6 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
 
     return list3;
 };
+
+// const input = process.argv[2];
+// console.log('input', input);
