@@ -6,7 +6,11 @@
  * }
  */
 
+// input: 2 ListNodes that are the head-nodes
+
 // edge-cases:
+// is this a single-linked list?
+// ...(i.e. final ListNode will have this.next = nnull)
 // are there any repeating ListNode.val values?
 // like <N1-01> => <N2-01>
 
