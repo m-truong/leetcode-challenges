@@ -64,6 +64,12 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     // create main-logic of comparing the two Node values
     // i.e. >>>> <<<<<<
 
+    // separate block for logic for if less than
+    // ==============>
+
+    // other seperate logic for comparing if greater than
+    // <==============
+
     // create secondary logic for changing the node values
 
     // create tertiary logic for checking if the end tail-node is ever reached.
