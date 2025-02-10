@@ -68,9 +68,6 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
 
     // create tertiary logic for checking if the end tail-node is ever reached.
 
-    // You are given the heads of two sorted linked lists list1 and list2.
-
-
     // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
     console.log('TODO: print inside of nodes');
