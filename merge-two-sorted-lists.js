@@ -26,10 +26,11 @@
 
 
 // should use JS ES6 class syntax 'class' keyword
+// this is the best-practice for writing a class constructor in a single JS file (newer JS version environment)
 class ListNode {
     constructor (value, next) {
         this.value = value === undefined ? 0 : value; // constructor defaults to value=0
-        this.next = next === undefined ? null : value; // contrsuctor defaults to next=head or tail node
+        this.next = next === undefined ? null : next; // contrsuctor defaults to next=head or tail node
     }
 }
 
