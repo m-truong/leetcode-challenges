@@ -59,6 +59,7 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     // Create the head of the new merged linked-list
     // ...by combining all the ListNodes from the original two <LLs>-<LLs>.
     // problem:
+    const combinedList3 = new ListNode();
 
     // create main-logic of comparing the two Node values
     // i.e. >>>> <<<<<<
@@ -68,22 +69,17 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     // create tertiary logic for checking if the end tail-node is ever reached.
 
     // You are given the heads of two sorted linked lists list1 and list2.
+
+
     // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
-
-
-
-
-    const list3 = new ListNode();
     console.log('TODO: print inside of nodes');
 
 
-    // console.log('starting here', list1.next, list2.val)
-    // outputs: { list2 } , {1}}}
+    // return the new merged linked-list
 
 
-
-    return list3;
+    return combinedList3;
 };
 
 // const input = process.argv[2];
