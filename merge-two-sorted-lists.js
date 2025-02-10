@@ -36,5 +36,5 @@ var mergeTwoLists = function(list1, list2) {
     // outputs: { list2 } , {1}}}
 
 
-
+    console.log('TODO: print inside of nodes');
 };
