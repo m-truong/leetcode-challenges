@@ -25,6 +25,11 @@
 // Then add them as next values to the new sorted array of the ListNodes after merging to other lists of LinkedList Nodes
 
 
+function ListNode (value, next) {
+    this.value = value === undefined ? 0 : value; // constructor defaults to value=0
+    this.next = next === undefined ? null : value; // contrsuctor defaults to next=head or tail node
+}
+
 /**
  * @param {ListNode} list1
  * @param {ListNode} list2
