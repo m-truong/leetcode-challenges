@@ -37,8 +37,10 @@ class ListNode {
     next: ListNode | null;
 
     constructor (value?: number, next?: ListNode | null) {
-        this.value = value === undefined ? 0 : value; // constructor defaults to value=0
-        this.next = next === undefined ? null : next; // contrsuctor defaults to next=head or tail node
+        // constructor defaults to value=0
+        this.value = value === undefined ? 0 : value;
+        // contrsuctor defaults to next=head or tail node
+        this.next = next === undefined ? null : next;
     }
 
 }
