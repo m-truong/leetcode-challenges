@@ -107,7 +107,6 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode | null 
         } else if (list1.value > list2.value){
             // use separate block for if the list1 is greater than list2
             pointer.next = list2;
-
             // DIFFICULT TO UNDERSTAND - but mainly to to shift the current reference of list2 to the next ListNode
             list2 = list2.next;
 
@@ -115,7 +114,7 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode | null 
         pointer = pointer.next;
         // not typical counter loop since i only know THE CONDITION of when to stop ~ and i don't know how many times it'll run.
         iterations++;
-    } while (list1.next !== null || list2.next !== null);
+    } while (list1.next !== null && list2.next !== null);
 
     // other seperate logic for comparing if greater than
     // <==============
@@ -132,8 +131,8 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode | null 
 
     // return the new merged linked-list
 
-
-    return pointer.next;
+    // return the original sentinenl node's next
+    return newSentinelNode.next;
 };
 
 // // Helper function to merge two sorted lists
