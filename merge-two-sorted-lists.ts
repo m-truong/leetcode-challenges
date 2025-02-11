@@ -131,5 +131,31 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     return combinedList3;
 };
 
-// const input = process.argv[2];
-// console.log('input', input);
+// // Helper function to merge two sorted lists
+// function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+//     // Create a dummy node to act as the head of the merged list
+//     let dummy = new ListNode();
+//     let current = dummy;
+
+//     // Traverse both lists and compare the values of the nodes
+//     while (list1 !== null && list2 !== null) {
+//         if (list1.value <= list2.value) {
+//             current.next = list1;
+//             list1 = list1.next;
+//         } else {
+//             current.next = list2;
+//             list2 = list2.next;
+//         }
+//         current = current.next;
+//     }
+
+//     // If there are remaining nodes in either list, append them to the merged list
+//     if (list1 !== null) {
+//         current.next = list1;
+//     } else if (list2 !== null) {
+//         current.next = list2;
+//     }
+
+//     // Return the merged list, which starts from the next node of the dummy node
+//     return dummy.next;
+// }
