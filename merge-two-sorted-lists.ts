@@ -62,17 +62,26 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     const combinedList3 = new ListNode();
 
     // create main-logic of comparing the two Node values
-    // i.e. >>>> <<<<<<
-
-    // separate block for logic for if less than
     // ==============>
+    // separate block for logic for if less than
+    // if list1 is numerically before list2
+    if (list1.value < list2.value) {
+        // then assign the newhead
+        combinedList3.next = list1;
+        // and then also assign the value of the new head node
+        combinedList3.value = list1.value-1;
+        // then changes pointers of head-nodes of list1 and list2
+        // list1.next = list2;
+    }
+
 
     // other seperate logic for comparing if greater than
     // <==============
 
     // create secondary logic for changing the node values
 
-    // create tertiary logic for checking if the end tail-node is ever reached.
+    // looping tertiary logic for checking if the end tail-node is ever reached.
+    // while (list1.next !== null)
 
     // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
