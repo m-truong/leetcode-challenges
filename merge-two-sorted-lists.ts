@@ -61,7 +61,7 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode | null 
     // Create the head of the new merged linked-list
     // ...by combining all the ListNodes from the original two <LLs>-<LLs>.
     // problem:
-    const newSentinelNode = new ListNode();
+    const newSentinelNode: ListNode = new ListNode();
     let pointer = newSentinelNode;
 
     // edge-case: check for empty lists
