@@ -36,6 +36,8 @@
 //     next: ListNode;
 // }
 
+// edge:cases - if there're duplicate node values
+// if smalled node-value is reached then what happens?
 class ListNode {
     value: number;
     next: ListNode | null;
@@ -55,25 +57,60 @@ class ListNode {
  * @return {ListNode}
  */
 var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
-
+    let iterations;
     // Create the head of the new merged linked-list
     // ...by combining all the ListNodes from the original two <LLs>-<LLs>.
     // problem:
     const combinedList3 = new ListNode();
+    const pointerNode = new ListNode();
+
+    // edge-case: check for empty lists
+    // if only list1 is empty, then return head of combined list but just add the head node of the 3rd list as list2
+    if (!list1) {
+        // then change the value
+        list2.value!== -100 ? combinedList3.value = list2.value-1: -100; //O1
+        // change nextnode to just point to list2
+        combinedList3.next = list2; // O1
+        // return new head node
+        return combinedList3;
+    } else if (!list2) {
+        // then change the value
+        list1.value!== -100 ? combinedList3.value = list1.value-1: -100;
+        // change nextnode to just point to list2
+        combinedList3.next = list1;
+        // return new head node
+        return combinedList3;
+    }
+
+    //===================================================================
+    // while the edge-cases are caught, then can start the do-while loop circitry
+    //===================================================================
 
     // create main-logic of comparing the two Node values
     // ==============>
     // separate block for logic for if less than
     // if list1 is numerically before list2
-    if (list1.value < list2.value) {
-        // then assign the newhead
-        combinedList3.next = list1;
-        // and then also assign the value of the new head node
-        combinedList3.value = list1.value-1;
-        // then changes pointers of head-nodes of list1 and list2
-        // list1.next = list2;
-    }
 
+    // ALSO need a dummy POINTER-OBJECT to keep track of the reference to the "third-wheel' ListNode"
+    do { // O(n)
+        if (list1.value <= list2.value) {
+            // and then also assign the value of the new head node
+            // but must check if the list1.value is already the smaleld possible (-100) negative integer number
+            list1.value !== -100 ? combinedList3.value = list1.value-1 : -100;
+            // then assign the newhead
+            combinedList3.next = list1;
+            pointerNode.next = list1.next; // this saves the reference of the smaller node's .next
+            // change dummy pointer
+            // then changes pointers of head-nodes of list1 and list2
+            list1.next = list2;
+        } else {
+            // use separate block for if the list1 is greater than list2
+
+
+        }
+        // not typical counter loop since i only know THE CONDITION of when to stop ~ and i don't know how many times it'll run.
+        iterations++;
+    } while (list1.next !== null || list2.next !== null);
 
     // other seperate logic for comparing if greater than
     // <==============
