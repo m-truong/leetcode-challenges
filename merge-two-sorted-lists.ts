@@ -56,30 +56,30 @@ class ListNode {
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
+var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode | null {
     let iterations;
     // Create the head of the new merged linked-list
     // ...by combining all the ListNodes from the original two <LLs>-<LLs>.
     // problem:
-    const combinedList3 = new ListNode();
-    const pointerNode = new ListNode();
+    const newSentinelNode = new ListNode();
+    let pointer = newSentinelNode;
 
     // edge-case: check for empty lists
     // if only list1 is empty, then return head of combined list but just add the head node of the 3rd list as list2
     if (!list1) {
         // then change the value
-        list2.value!== -100 ? combinedList3.value = list2.value-1: -100; //O1
+        // list2.value!== -100 ? combinedList3.value = list2.value-1: -100; //O1
         // change nextnode to just point to list2
-        combinedList3.next = list2; // O1
+        pointer.next = list2; // O1
         // return new head node
-        return combinedList3;
+        return pointer.next; // the next node after the sentinel IS THE ACTUAL HEAD of the node with a value
     } else if (!list2) {
         // then change the value
-        list1.value!== -100 ? combinedList3.value = list1.value-1: -100;
+        // list1.value!== -100 ? combinedList3.value = list1.value-1: -100;
         // change nextnode to just point to list2
-        combinedList3.next = list1;
+        pointer.next = list1;
         // return new head node
-        return combinedList3;
+        return pointer.next;
     }
 
     //===================================================================
@@ -92,22 +92,27 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     // if list1 is numerically before list2
 
     // ALSO need a dummy POINTER-OBJECT to keep track of the reference to the "third-wheel' ListNode"
+    // NOTE: LEARNED ABOUT SENTINEL NODES
+    // NOTE: LIST-NODES DON'T REQUIRE A VALUE to be assigned; can use "placeholder" value
+    // JUST USE SENTINEL NODE = just iterate from the DUMMY.NEXT (as the ACTUAL HEAD of the linked-list because the sentinel node just simplifies entry into a linkedlist)
     do { // O(n)
         if (list1.value <= list2.value) {
             // and then also assign the value of the new head node
             // but must check if the list1.value is already the smaleld possible (-100) negative integer number
-            list1.value !== -100 ? combinedList3.value = list1.value-1 : -100;
+            // list1.value !== -100 ? combinedList3.value = list1.value-1 : -100;
             // then assign the newhead
-            combinedList3.next = list1;
-            pointerNode.next = list1.next; // this saves the reference of the smaller node's .next
-            // change dummy pointer
-            // then changes pointers of head-nodes of list1 and list2
-            list1.next = list2;
-        } else {
+            pointer.next = list1;
+            // difficult part
+            list1 = list1.next;
+        } else if (list1.value > list2.value){
             // use separate block for if the list1 is greater than list2
+            pointer.next = list2;
 
+            // DIFFICULT TO UNDERSTAND - but mainly to to shift the current reference of list2 to the next ListNode
+            list2 = list2.next;
 
         }
+        pointer = pointer.next;
         // not typical counter loop since i only know THE CONDITION of when to stop ~ and i don't know how many times it'll run.
         iterations++;
     } while (list1.next !== null || list2.next !== null);
@@ -128,7 +133,7 @@ var mergeTwoLists = function(list1: ListNode, list2: ListNode): ListNode {
     // return the new merged linked-list
 
 
-    return combinedList3;
+    return pointer.next;
 };
 
 // // Helper function to merge two sorted lists
