@@ -39,7 +39,7 @@
  */
 var removeDuplicates = function(nums) {
     // new TEch: JSON.stringify()
-    console.log('first', JSON.stringify(nums));
+    console.log('original interger[] ==>', JSON.stringify(nums));
 
     // NOTE: important NEW keyword
     const uniqueNumMap = new Map();
@@ -50,13 +50,18 @@ var removeDuplicates = function(nums) {
         console.log('current number', JSON.stringify(current));
         // if integer NEVER ENCOUNTERED YET, then SET IT
         !uniqueNumMap.has(current)
-        ? uniqueNumMap.set(current, '1')
-        : uniqueNumMap.set(current, uniqueNumMap.get(current) + 1);
+        ? uniqueNumMap.set(current, 1) // set to integer not 'quotes'
+        : uniqueNumMap.set(current, (uniqueNumMap.get(current)) + 1);
         // utialize this counter as valuable
     }
-    console.log('the count of each', JSON.stringify(uniqueNumMap.entries()));
+
+    const resultsLogMapKeys = uniqueNumMap.keys();
+    const resultsLogMapCount = uniqueNumMap.values();
+
+    console.log('the results', resultsLogMapCount);
 
     console.log(JSON.stringify(uniqueNumMap.size));
+
     // ....... if already there then remove from array
     // splice requires use of the Index
     for (let i = 0 ; i < nums.length ; i++) {
@@ -65,7 +70,7 @@ var removeDuplicates = function(nums) {
         uniqueNumMap.has(nums[i]) && nums.splice(i, uniqueNumMap.get(nums[i]) - 1);
     }
 
-    console.log('nums array', nums.toString());
+    console.log('My finished modified array is nums array ==>', nums.toString());
 
     return uniqueNumMap.size;
 };
