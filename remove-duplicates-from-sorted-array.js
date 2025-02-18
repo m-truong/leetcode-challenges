@@ -60,7 +60,7 @@ var removeDuplicates = function(nums) {
 
     console.log('the results', resultsLogMapCount);
 
-    console.log(JSON.stringify(uniqueNumMap.size));
+    console.log(`My UniqueNumsMap has ${JSON.stringify(uniqueNumMap.size)} unique number-keys.`);
 
     // ....... if already there then remove from array
     // splice requires use of the Index
