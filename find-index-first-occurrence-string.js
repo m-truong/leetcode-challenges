@@ -29,7 +29,7 @@ var strStr = function(haystack, needle) {
     // if reach the end of the search ...
     // then ALWAYS return hard-coded (-1)
 
-    return haystack.substring(needle);
+    return haystack.indexOf(needle);
     // return integer
 };
 
