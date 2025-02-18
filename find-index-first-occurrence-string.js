@@ -18,8 +18,30 @@
  */
 var strStr = function(haystack, needle) {
 
-    // return integer
+    // plan:
+    // MAINTAIN that order of 2nd substring inside the 1st string
+    // short-circuit ==> if 1ndparam is ALREADY shorter than 1stparam --> Then return (-1)
 
+
+    // output: {integer}
     // return either INDEX of the location of 2ndparam(string) inside the 1stparam(string)
-    //
+    //  ==> must be 1st occurrence
+    // if reach the end of the search ...
+    // then ALWAYS return hard-coded (-1)
+
+    return haystack.substring(needle);
+    // return integer
 };
+
+
+// use the terminal to run the code
+const input = process.argv.slice(2);
+
+if (input.length === 2) {
+    const haystack = input[0];
+    const needle = input[1];
+    const output = strStr(haystack, needle);
+    console.log(`The index of the first occurrence is ${output}`);
+} else {
+    console.log('Please provide two strings as parameters.');
+}
