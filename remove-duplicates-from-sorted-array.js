@@ -15,7 +15,6 @@
 // complexity:
 // keep it O(n)
 
-
 // plan:
 // create hashMap of each number(integer) encountered
 // if it's not already encountered ~ then add it
@@ -25,6 +24,14 @@
 
 // using a list/array --> iterate through O(n)
 // once reached removal ---> will be O(n) since need to shift
+
+// constraints:
+// at least one integer
+// elements are also negative
+
+// ex:
+// [1,1,1,1,2,2,2,2,2,3,3,3,3,4]
+// [0,1,2,3,4,5]
 
 /**
  * @param {number[]} nums
@@ -44,15 +51,20 @@ var removeDuplicates = function(nums) {
         !uniqueNumMap.has(current)
         ? uniqueNumMap.set(current, '1')
         : uniqueNumMap.set(current, uniqueNumMap.get(current) + 1);
+        // utialize this counter as valuable
     }
+    console.log('the count of each', uniqueNumMap.entries());
 
     console.log(uniqueNumMap.size);
     // ....... if already there then remove from array
     // splice requires use of the Index
     for (let i = 0 ; i < nums.length ; i++) {
         // Array.splice() is the de-facto JS method fo removing an element IN-place
-        uniqueNumMap.has(nums[i]) && nums.splice(i, 1);
+        // this should splice/remove in place up TO one-less the get value
+        uniqueNumMap.has(nums[i]) && nums.splice(i, uniqueNumMap.get(nums[i]) - 1);
     }
+
+    console.log('nums array', nums.toString());
 
     return uniqueNumMap.size;
 };
