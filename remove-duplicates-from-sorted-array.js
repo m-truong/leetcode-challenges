@@ -21,6 +21,7 @@
 // if it's not already encountered ~ then add it
 // if it's encountered already ~ then remove it
 // using HashMap ~ call prototype method to get number of unique keys
+// how many repeating duplciates?
 
 // using a list/array --> iterate through O(n)
 // once reached removal ---> will be O(n) since need to shift
@@ -35,5 +36,23 @@ var removeDuplicates = function(nums) {
     // NOTE: important NEW keyword
     const uniqueNumMap = new Map();
 
-    // return HashMap's ### keys
+    // NOTE: Use the for-of loop
+    // go through entire array
+    for (let current of nums) {
+        console.log('current number', current);
+        // if integer NEVER ENCOUNTERED YET, then SET IT
+        !uniqueNumMap.has(current)
+        ? uniqueNumMap.set(current, '1')
+        : uniqueNumMap.set(current, uniqueNumMap.get(current) + 1);
+    }
+
+    console.log(uniqueNumMap.size);
+    // ....... if already there then remove from array
+    // splice requires use of the Index
+    for (let i = 0 ; i < nums.length ; i++) {
+        // Array.splice() is the de-facto JS method fo removing an element IN-place
+        uniqueNumMap.has(nums[i]) && nums.splice(i, 1);
+    }
+
+    return uniqueNumMap.size;
 };
