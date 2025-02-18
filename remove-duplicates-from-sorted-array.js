@@ -38,7 +38,8 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    console.log('first', nums);
+    // new TEch: JSON.stringify()
+    console.log('first', JSON.stringify(nums));
 
     // NOTE: important NEW keyword
     const uniqueNumMap = new Map();
@@ -46,16 +47,16 @@ var removeDuplicates = function(nums) {
     // NOTE: Use the for-of loop
     // go through entire array
     for (let current of nums) {
-        console.log('current number', current);
+        console.log('current number', JSON.stringify(current));
         // if integer NEVER ENCOUNTERED YET, then SET IT
         !uniqueNumMap.has(current)
         ? uniqueNumMap.set(current, '1')
         : uniqueNumMap.set(current, uniqueNumMap.get(current) + 1);
         // utialize this counter as valuable
     }
-    console.log('the count of each', uniqueNumMap.entries());
+    console.log('the count of each', JSON.stringify(uniqueNumMap.entries()));
 
-    console.log(uniqueNumMap.size);
+    console.log(JSON.stringify(uniqueNumMap.size));
     // ....... if already there then remove from array
     // splice requires use of the Index
     for (let i = 0 ; i < nums.length ; i++) {
@@ -71,11 +72,12 @@ var removeDuplicates = function(nums) {
 
 
 // use the terminal to run the code
-const input = process.argv[2] // reads input from terminal
+const input = process.argv.slice(2).map(Number); // reads input from terminal and converts to an array of numbers
 
-if (input) {
-    const output = romanToInt(input);
-    console.log(`the # unique integers of ${input} is ${integerOutput}`);
+if (input.length > 0) {
+    const output = removeDuplicates(input);
+    console.log(`The number of unique integers in the array is ${output}`);
+    console.log(`The modified array is [${input}]`);
 } else {
-    console.log('please provide a valid JavaScript integer[]');
+    console.log('Please provide a valid array of integers.');
 }
