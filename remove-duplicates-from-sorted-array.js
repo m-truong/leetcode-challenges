@@ -68,3 +68,14 @@ var removeDuplicates = function(nums) {
 
     return uniqueNumMap.size;
 };
+
+
+// use the terminal to run the code
+const input = process.argv[2] // reads input from terminal
+
+if (input) {
+    const output = romanToInt(input);
+    console.log(`the # unique integers of ${input} is ${integerOutput}`);
+} else {
+    console.log('please provide a valid JavaScript integer[]');
+}
