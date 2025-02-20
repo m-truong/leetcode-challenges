@@ -34,4 +34,6 @@
  */
 var invertTree = function(root) {
     console.log('here ===> root',   JSON.stringify(root));
+
+    return root;
 };
