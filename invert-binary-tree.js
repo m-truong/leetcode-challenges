@@ -1,5 +1,14 @@
 // task: given a binary tree's r00t, invert the tree
-// ...returnit's r00t
+// ...return it's r00t
+
+// plan:
+// sentinel-nodes?
+//
+
+// edge:
+
+// constraints:
+
 
 /**
  * Definition for a binary tree node.
@@ -9,10 +18,13 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
+// Note: tree-nodes look different from ListNodes
+
 /**
  * @param {TreeNode} root
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-
+    console.log('here ===> root',   JSON.stringify(root));
 };
