@@ -15,6 +15,9 @@
 // edge:
 
 // constraints:
+// # nodes can be between 0 to 100
+// need to handle empty root node first
+// the values are -100 to +100
 
 
 /**
