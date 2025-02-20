@@ -47,11 +47,13 @@
 
 class TreeNode {
     constructor(val, left, right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        this.val = (val === undefined) ? 0 : val;
+        this.left = (left === undefined) ? null : left;
+        this.right = (right === undefined) ? null : right;
     }
 }
+
+console.log('bloop');
 
 /**
  * @param {TreeNode} root
@@ -65,6 +67,19 @@ var invertTree = function(root) {
     // they also can be negative
     // i can get an empty argument testcase
     // there can be identical values
+
+
+    // // my first dummy-sentinel node will have a value of zer0
+    // but it'll have 2 pointers to a left Three Node Child
+    //  and a right tree-node child
+
+    const sentinel = new TreeNode();
+
+    // pseudo:
+    //check if my root node is an edge-case for []
+    // how would I know?
+    // ...well, first then check if my root has a null-value for it's left-node
+    // also then i'd check if my right-node has a null-value for it's right-node
 
 
     return root;
