@@ -45,12 +45,27 @@
 
 // Note: tree-nodes look different from ListNodes
 
+class TreeNode {
+    constructor(val, left, right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
 /**
  * @param {TreeNode} root
  * @return {TreeNode}
  */
 var invertTree = function(root) {
     console.log('here ===> root',   JSON.stringify(root));
+
+    // at most two references to 2 other Tree nodes
+    // my tree nodes do not need to be sorted
+    // they also can be negative
+    // i can get an empty argument testcase
+    // there can be identical values
+
 
     return root;
 };
