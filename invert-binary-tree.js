@@ -1,15 +1,29 @@
-// task: given a binary tree's r00t, invert the tree
-// ...return it's r00t
+// Q:
+// is it an unsorted binary tree?
+// All testcases are unsorted
+// so ORDER doesn't matter
+// are IDENTICAL INTEGER VALUES ALLOWED?
+// (yes allowed)
+// any duplicate values in a tree-node? i.e. all unique values?
+
+// BST seems to be the (binary search tree) is the "sorted" one
+
+// task: given a binary tree's r00t, INVERT the binary-tree (i.e. reverse)
+// ...then return the same r00t
+
 // invert-seems to switch the pointers of left-right TreeNodes
 // keep track of the RootNode
+// inserted left first, then right first
 
 // plan:
 // sentinel-nodes?
-// will have to traverse Tree until reach the leaf nodes
+// will have to traverse tree until reach the leaf nodes
 // then traverse until this.left && this.right are BOTH null
 // once end of tree is reached
 //  ... will have to backtrack-> and MIRROR the left-to-right treenodes
+// CANNOT SORT FIRST, because then the original order isn't 'inverted'
 
+// tip:
 // useful to use DP or Recursion
 
 // edge:
@@ -21,7 +35,7 @@
 
 
 /**
- * Definition for a binary tree node.
+ * Definition for a binary tree node. Perfect binary tree, whereby all internal nodes have at most two-child-nodes, and all the leaves are at the same level.
  * function TreeNode(val, left, right) {
  *     this.val = (val===undefined ? 0 : val)
  *     this.left = (left===undefined ? null : left)
