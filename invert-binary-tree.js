@@ -80,7 +80,7 @@ var invertTree = function(root) {
     // how would I know?
     // ...well, first then check if my root has a null-value for it's left-node
     // also then i'd check if my right-node has a null-value for it's right-node
-
+    //
 
     return root;
 };
