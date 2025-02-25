@@ -90,11 +90,20 @@ var invertTree = function(root) {
         return root;
     }
 
-    //
     // note: i call the ES6 JS class constructor here.
     const sentinel = new TreeNode();
     // write the sentinel's nodes values to point to the root
     // so that it doesn't get reference-error
     sentinel.left = root;
+
+    // Reassign the pointers of the TreeNode root
+    // which should only take a few mmss in terms of runtime
+    // since the TreeNode (class) is supposed to be like a HashMap
+    // and if the left and right pointers are never null
+    // keep reassigning the pointers
+
+    for ( of ) {
+
+    }
     return root;
 };
