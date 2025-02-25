@@ -76,7 +76,25 @@ var invertTree = function(root) {
     // ...well, first then check if my root has a null-value for it's left-node
     // also then i'd check if my right-node has a null-value for it's right-node
 
+
     console.log('here ===> root',   JSON.stringify(root));
+
+    // edge: first check if NO INPUT provided
+    // like if the root is undefined // this might be the []empty array edg-case
+    if (root === undefined) {
+        return root;
+    }
+
+    // edge: edge case for single - Tree Node
+    if (root.val && !root.left && !root.right) {
+        return root;
+    }
+
+    //
+    // note: i call the ES6 JS class constructor here.
     const sentinel = new TreeNode();
+    // write the sentinel's nodes values to point to the root
+    // so that it doesn't get reference-error
+    sentinel.left = root;
     return root;
 };
