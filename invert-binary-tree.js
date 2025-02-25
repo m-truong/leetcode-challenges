@@ -60,27 +60,23 @@ console.log('bloop');
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    console.log('here ===> root',   JSON.stringify(root));
-
     // at most two references to 2 other Tree nodes
     // my tree nodes do not need to be sorted
     // they also can be negative
     // i can get an empty argument testcase
     // there can be identical values
 
-
-    // // my first dummy-sentinel node will have a value of zer0
+    // my first dummy-sentinel node will have a value of zer0
     // but it'll have 2 pointers to a left Three Node Child
-    //  and a right tree-node child
-
-    const sentinel = new TreeNode();
+    // and a right tree-node child
 
     // pseudo:
     //check if my root node is an edge-case for []
     // how would I know?
     // ...well, first then check if my root has a null-value for it's left-node
     // also then i'd check if my right-node has a null-value for it's right-node
-    //
 
+    console.log('here ===> root',   JSON.stringify(root));
+    const sentinel = new TreeNode();
     return root;
 };
