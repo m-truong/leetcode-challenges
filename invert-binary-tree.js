@@ -81,20 +81,8 @@ var invertTree = function(root) {
 
     // edge: first check if NO INPUT provided
     // like if the root is undefined // this might be the []empty array edg-case
-    if (root === undefined) {
-        return root;
-    }
+    if (root === null) { return root; }
 
-    // edge: edge case for single - Tree Node
-    if (root.val && !root.left && !root.right) {
-        return root;
-    }
-
-    // note: i call the ES6 JS class constructor here.
-    const sentinel = new TreeNode();
-    // write the sentinel's nodes values to point to the root
-    // so that it doesn't get reference-error
-    sentinel.left = root;
 
     // Reassign the pointers of the TreeNode root
     // which should only take a few mmss in terms of runtime
