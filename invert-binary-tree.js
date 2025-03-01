@@ -106,6 +106,10 @@ var invertTree = function(root) {
     // Look at the left and the right child node, and swap them (using a temporary variable)
     // Then recurse on each of the left and right (now swapped) nodes as the root of the following tree
 
-
+    if (root === null) { return root; }
+    const leftNode = root.left;
+    root.left = invertTree(root.right);
+    root.right = invertTree(leftNode);
     return root;
+
 };
