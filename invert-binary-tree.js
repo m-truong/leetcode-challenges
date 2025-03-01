@@ -76,12 +76,18 @@ var invertTree = function(root) {
     // ...well, first then check if my root has a null-value for it's left-node
     // also then i'd check if my right-node has a null-value for it's right-node
 
+    // BST and BinaryTrees are not the same
+    // BinaryTrees are more generalized
+    // BST's are a specialized form of BinaryTrees that are sorted, making searh, insertion and deletion efficient
+    // O((log(n))
+
 
     console.log('here ===> root',   JSON.stringify(root));
-
-    // edge: first check if NO INPUT provided
-    // like if the root is undefined // this might be the []empty array edg-case
     if (root === null) { return root; }
+    const leftNode = root.left;
+    root.left = invertTree(root.right);
+    root.right = invertTree(leftNode);
+    return root;
 
 
     // Reassign the pointers of the TreeNode root
@@ -105,11 +111,4 @@ var invertTree = function(root) {
     // Base case is if both children are null, return
     // Look at the left and the right child node, and swap them (using a temporary variable)
     // Then recurse on each of the left and right (now swapped) nodes as the root of the following tree
-
-    if (root === null) { return root; }
-    const leftNode = root.left;
-    root.left = invertTree(root.right);
-    root.right = invertTree(leftNode);
-    return root;
-
 };
