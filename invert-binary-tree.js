@@ -104,6 +104,20 @@ var invertTree = function(root) {
 
     // new-approach: use depth-first-search (DPS) or breadth-first-search (BFS)
 
+    // Q’s & Assumptions
+    // Assume non-empty root & non-empty nodes
+    // Single root node returns the root node
+    // It doesn’t matter whether its balanced or unbalanced
+    // It’s not a BST so we don’t have to look at the value at all
+    // Assume all numbers are unique (pls)
+
+    // Algorithm
+    // Start at the root node
+    // Recursive step:
+    // Base case is if both children are null, return
+    // Look at the left and the right child node, and swap them (using a temporary variable)
+    // Then recurse on each of the left and right (now swapped) nodes as the root of the following tree
+
 
     return root;
 };
