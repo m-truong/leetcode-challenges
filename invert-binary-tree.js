@@ -46,7 +46,7 @@
 // Note: tree-nodes look different from ListNodes
 
 class TreeNode {
-    constructor(val, left, right) {
+    constructor (val, left, right) {
         this.val = (val === undefined) ? 0 : val;
         this.left = (left === undefined) ? null : left;
         this.right = (right === undefined) ? null : right;
@@ -102,8 +102,8 @@ var invertTree = function(root) {
     // and if the left and right pointers are never null
     // keep reassigning the pointers
 
-    for ( of ) {
+    // new-approach: use depth-first-search (DPS) or breadth-first-search (BFS)
 
-    }
+
     return root;
 };
