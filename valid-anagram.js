@@ -7,9 +7,26 @@
 // plan:
 // count the number of charz in both string inputs
 // use a HashMap (key:values)
-//
+// if both the type/number of chars are the same in the hashmap
+// then 2nd input string 't' is an anagram of 's'
 
 // edge:
-// can inputs be empty?
-// any length? or fixed-length?
+// min length of 1 char
 // return boolean
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+// ES6 arrow expression
+const isAnagram = (s, t) => {
+    const charMap = new Map();
+
+    // turn the strings into arrays of 'chars'
+    // then iterate thru each, and CountFrequency of each char
+    // use for of loop
+    // if the count of each Char is the same, then 2nd input is anagram of the 1st
+
+}
