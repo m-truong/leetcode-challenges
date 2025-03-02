@@ -29,6 +29,10 @@ const isAnagram = (s, t) => {
     // remember using String.prototype.split('') String/Split
     // String split splits a string into an array by the separator
     // remember to always use the "" double-quotes as the separator
+    // if the char isn't in the Map, add it
+    // if it's already in there, then uptick the frequency
+    // double-bang will force a VALUE into it's boolean type
+    // first bang (!) converts into boolean-negation, then 2nd bang (!) converts into true-boolean-value
 
     const tCharMap = new Map();
     const sCharMap = new Map();
@@ -37,37 +41,36 @@ const isAnagram = (s, t) => {
     console.log('print tCharArray', JSON.stringify(tCharArray));
     console.log('print sCharArray', JSON.stringify(sCharArray));
 
-    // if the char isn't in the Map, add it
-    // if it's already in there, then uptick the frequency
-    // double-bang will force a VALUE into it's boolean type
-    // first bang (!) converts into boolean-negation, then 2nd bang (!) converts into true-boolean-value
     for (let char of tCharArray) { // O(n)
-        if (!tCharMap.has(char)) {
-            tCharMap.set(char, 1);
-        } else {
+        if (tCharMap.has(char)) {
             tCharMap.set(char, tCharMap.get(char) + 1);
+        } else {
+            tCharMap.set(char, 1);
         }
     }
 
-    // now loop through the sCharArray
     for (let char of sCharArray) { // O(n)
-        if (!sCharMap.has(char)) {
-            sCharMap.set(char, 1);
-        } else {
+        if (sCharMap.has(char)) {
             sCharMap.set(char, sCharMap.get(char) + 1);
+        } else {
+            sCharMap.set(char, 1);
         }
     }
+
     console.log('print tCharMap', JSON.stringify(tCharMap));
     console.log('print sCharMap', JSON.stringify(sCharMap));
 
-    for (let key in tCharMap) {
-        if (sCharMap.has(key)) {
-            const sValue = sCharMap.get(key);
-            const tValue = tCharMap.get(key);
-            if (sValue !== tValue) {
-                return false;
-            }
+    for (let [key, value] of tCharMap) {
+        if (sCharMap.get(key) !== value) {
+            return false;
         }
     }
+
+    for (let [key, value] of sCharMap) {
+        if (tCharMap.get(key) !== value) {
+            return false;
+        }
+    }
+
     return true;
 }
