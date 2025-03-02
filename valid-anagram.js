@@ -42,23 +42,23 @@ const isAnagram = (s, t) => {
     // double-bang will force a VALUE into it's boolean type
     // first bang (!) converts into boolean-negation, then 2nd bang (!) converts into true-boolean-value
     for (let char of tCharArray) { // O(n)
-        if (tCharMap.has(char)) {
-            tCharMap.set(char, tCharMap.get(char) + 1);
-        } else {
+        if (!tCharMap.has(char)) {
             tCharMap.set(char, 1);
+        } else {
+            tCharMap.set(char, tCharMap.get(char) + 1);
         }
     }
 
     // now loop through the sCharArray
     for (let char of sCharArray) { // O(n)
-        if (sCharMap.has(char)) {
-            sCharMap.set(char, sCharMap.get(char) + 1);
-        } else {
+        if (!sCharMap.has(char)) {
             sCharMap.set(char, 1);
+        } else {
+            sCharMap.set(char, sCharMap.get(char) + 1);
         }
     }
-    console.log('print charArray', JSON.stringify(tCharMap));
-    console.log('print charArray', JSON.stringify(tCharMap));
+    console.log('print tCharMap', JSON.stringify(tCharMap));
+    console.log('print sCharMap', JSON.stringify(sCharMap));
 
     for (let key in tCharMap) {
         if (sCharMap.has(key)) {
