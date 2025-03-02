@@ -60,6 +60,7 @@ const isAnagram = (s, t) => {
     console.log('print tCharMap', JSON.stringify(tCharMap));
     console.log('print sCharMap', JSON.stringify(sCharMap));
 
+    // these both loop through both
     for (let [key, value] of tCharMap) {
         if (sCharMap.get(key) !== value) {
             return false;
