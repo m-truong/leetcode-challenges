@@ -10,6 +10,20 @@
 // All the integers in nums are unique.
 // nums is sorted in ascending order.
 
+// Intuition
+// We start from the most basic and elementary template.
+
+// First, we define the search space using two boundary indexes, left and right, all possible indexes are within the inclusive range [left, right]. We shall continue searching over the search space as long as it is not empty. A general way is to use a while loop with the condition left <= right, so we can break out of this loop if we empty the range or trigger other conditions which we will discuss later.
+
+// The next step is to find the 'pivot point', the middle index that divides the search space into two halves. We need to compare the value at the middle index nums[mid] with target, the purpose of this step is to cut one half that is guaranteed not to contain target.
+
+// If nums[mid] = target, it means we find target, and the job is done! We can break the loop by returning mid.
+// If nums[mid] < target, combined with the array is sorted, we know that all values in the left half are smaller than target, so we can safely cut this half by letting left = mid + 1.
+// If nums[mid] > target, it means all values in the right half are larger than target and can be cut safely!
+// alt text
+
+// Does this loop ever stop? Yes, take the following picture as an example, suppose we are searching over an array of size 1, in this case, left, right, and mid all stand for the only index in the array. In any of the three conditions, we trigger one of the break statements and stop the loop.
+
 // Algorithm
 // Initialize the boundaries of the search space as left = 0 and right = nums.size - 1.
 // If there are elements in the range [left, right], we find the middle index mid = (left + right) / 2 and compare the middle value nums[mid] with target:
