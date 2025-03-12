@@ -41,3 +41,12 @@
 // Space complexity: O(1)
 
 // During the loop, we only need to record three indexes, left, right, and mid, they take constant space.
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function(nums, target) {
+
+};
