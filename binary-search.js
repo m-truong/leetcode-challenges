@@ -52,6 +52,8 @@ var search = function(nums, target) {
     let left = 0, right = nums.length - 1;
     // Continue searching while the left boundary is <= right boundary
     while (left <= right) {
+        // Get the middle index
+        let mid = Math.floor(left + (right - left) / 2);
 
     }
 
