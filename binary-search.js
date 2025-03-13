@@ -48,5 +48,7 @@
  * @return {number}
  */
 var search = function(nums, target) {
+    // Set the left and right boundaries
+    let left = 0, right = nums.length - 1;
 
 };
