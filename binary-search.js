@@ -50,5 +50,11 @@
 var search = function(nums, target) {
     // Set the left and right boundaries
     let left = 0, right = nums.length - 1;
+    // Continue searching while the left boundary is <= right boundary
+    while (left <= right) {
 
+    }
+
+    // If target is not found, return -1
+    return -1;
 };
