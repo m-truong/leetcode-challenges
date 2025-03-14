@@ -13,7 +13,14 @@
 // ES6 technique::
 // my ES6 technique is as follows.
 // since it's an array, of the JS integer data type (not a floating point number), so then we can split the array into smaller problems.
-//
+// I know searching an entire array from the start to the tail end of the array/list-data structure would be O(n) linear runtime complexity
+// so instead taking O(n) linear runtime, I think an easier and faster algorithmic approach would be to divide-and-conquer
+// so basically eliminiting half of the search runtime in half
+// in order to find the target, let's start with the middle element, and determine if the integer number is greater than or less than the middle number
+// once we do that, then we can CUT our SEARCHTIME IN half
+// and proceed to only search THE PORTION of the list-structure that DOES contain INTEGERS that the TARGET could be within!
+// we keep this strat until we've DETERMINED the exit or BASE CASE of the problem,
+// ... which is that the TARGET integer ISN'T FOUND IN THE INPUT NUMBER[]ARRAY
 
 // Intuition
 // We start from the most basic and elementary template.
