@@ -69,12 +69,12 @@ const binaryDiscovery = (nums, target) => {
         if (nums[midPointIndex] === target) {
             return midPointIndex;
             // if the value is less than the target, shift the
-        } else if (nums[midPointIndex]<= target) {
+        } else if (nums[midPointIndex] < target) {
             // so now shift the leftBoundInded UP TO THE midPointIndex
             // must shift +1 for zero-based indexing
             leftBountIndex = midPointIndex+1;
 
-        } else if (nums[midPointIndex] >= target) {
+        } else if (nums[midPointIndex] > target) {
             // then shfit the rightPointIndex to the midpoint
             rightPointIndex = midPointIndex+1;
         }
