@@ -10,6 +10,11 @@
 // All the integers in nums are unique.
 // nums is sorted in ascending order.
 
+// ES6 technique::
+// my ES6 technique is as follows.
+// since it's an array, of the JS integer data type (not a floating point number), so then we can split the array into smaller problems.
+//
+
 // Intuition
 // We start from the most basic and elementary template.
 
