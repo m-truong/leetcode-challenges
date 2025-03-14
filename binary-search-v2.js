@@ -44,7 +44,7 @@ const binaryDiscovery = (nums, target) => {
 
         } else if (nums[midPointIndex] > target) {
             // then shfit the rightPointIndex to the midpoint
-            midPointIndex = midPointIndex+1;
+            rightBoundIndex = midPointIndex+1;
         }
         // these left and right bound indices gets reassigned as the range decreases
     } while (leftBoundIndex <= rightBoundIndex);
