@@ -22,6 +22,43 @@
 // we keep this strat until we've DETERMINED the exit or BASE CASE of the problem,
 // ... which is that the TARGET integer ISN'T FOUND IN THE INPUT NUMBER[]ARRAY
 
+// edge-cases:
+// what abotu single element in the list-structure
+// are there repeating numbers? (could cause issues when there's a repeating instance of the target, IF SO?!
+// THEN what do we do?
+// just return the TARGET? or at least RETURN THE EARLIEST FIRST instance of deteting the target
+// and then break the loop searching for the target
+// NO empty input number[] arrays
+// can be negative and positive
+// ALSO ALREADY SORTED !
+// (sorted is IMPORTANT) because then IT'S A BINARY SEARCH
+// if NOT PRE-SORTED ALREADY then CANNOT BE BINARY SEARCH
+
+
+/**
+ * @param {numbers[]} nums
+ * @param {number} target
+ * @return {number} non-reserved english code-word
+ */
+
+const binaryDiscovery = (nums, target) => {
+    // practice using ECMA6's built-in arithmetic libraries
+    // use let to reasign in memory
+    // check MDN for the Math() library static methods
+    // I know about the divide operation and round-down!
+    console.log(`here ${nums.length}`, JSON.stringify(nums.length));
+    const totalNumbers = nums.length-1;
+    // there is an issue of even/odd length
+    // so to take care of that we just round down
+    // so now we have the halfway point
+    // if it's even then we get the bottom approx mid-point index
+    // if it's odd then we just get the exact midpoint
+    // this will take me to exactly to middle index placement of list-structure
+    let midPoint = Math.floor(length / 2);
+
+
+};
+
 // Intuition
 // We start from the most basic and elementary template.
 
