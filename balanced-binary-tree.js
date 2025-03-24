@@ -16,11 +16,18 @@
 /**
  * definition of binary tree node inputs. essentially ListNode * class constructor function.
  * function TreeNode (val, left, right) {
- *  this.val = (val === undefined ? : 0 : val);
- *  this.left = (val === undefined ? : 0 : val);
- *  this.right = (val === undefined ? : 0 : val);
+ *    this.val = (val === undefined ? 0 : val);
+ *    this.left = (left === undefined ? 0 : left);
+ *    this.right = (right === undefined ? 0 : right);
  * }
  */
+
+
+const TreeNode =  (val, left, right) => {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? 0 : left);
+    this.right = (right === undefined ? 0 : right);
+}
 
 /**
  * @param {TreeNode} givenRoot
