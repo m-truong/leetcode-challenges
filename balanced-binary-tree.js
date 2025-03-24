@@ -12,6 +12,10 @@
 // psuedo
 // work with sentinel-TreeNode
 // return boolean flag
+// a binary tree has only two subtrees
+// a binary-[search] tree is one where all nodes are [SORTED], then possible for O(nLogn) algo
+// a [balanced] binary tree ISN'T necessarily a binary-[search] tree
+// balanced-binary tree means that the heights? or depths? of each left/right subtree ONLY DIFFERS AT MOST BY SINGLE NODE
 
 /**
  * definition of binary tree node inputs. essentially ListNode * class constructor function.
