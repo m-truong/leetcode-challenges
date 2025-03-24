@@ -7,7 +7,8 @@
 // edge
 // can have empty tree, even though given undefined-root
 // handle by creating a sentinel-dummy node
-//
+// are they sorted??
+// does pre-sorting?? make more efficient??
 
 // psuedo
 // work with sentinel-TreeNode
@@ -16,6 +17,9 @@
 // a binary-[search] tree is one where all nodes are [SORTED], then possible for O(nLogn) algo
 // a [balanced] binary tree ISN'T necessarily a binary-[search] tree
 // balanced-binary tree means that the heights? or depths? of each left/right subtree ONLY DIFFERS AT MOST BY SINGLE NODE
+// HEIGHT/LENGTH is the distance from Root node
+// basically, HEIGHT is the DISTANCE or LENGTH of NETIRE subtree
+// DEPTH "of a NODE", is how many NODES distance from root, think of "Depth" as "HOW DEEP is the NODE in the tree"
 
 /**
  * definition of binary tree node inputs. essentially ListNode * class constructor function.
