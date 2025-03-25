@@ -21,6 +21,8 @@
 // basically, HEIGHT is the DISTANCE or LENGTH of NETIRE subtree
 // DEPTH "of a NODE", is how many NODES distance from root, think of "Depth" as "HOW DEEP is the NODE in the tree"
 
+// if depth of a node is GREATER than one, then it's UNBALANCED!!!
+
 /**
  * definition of binary tree node inputs. essentially ListNode * class constructor function.
  * function TreeNode (val, left, right) {
