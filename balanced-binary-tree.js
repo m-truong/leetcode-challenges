@@ -42,4 +42,43 @@ const TreeNode =  (val, left, right) => {
  * @param {TreeNode} givenRoot
  * @return {boolean}
  */
-const isBalanced = (givenRoot) => {};
+var isBalanced = function(root) {
+
+    // left-tracker depth variable
+    // right-tracker depth variable
+    let leftDepth = 0, rightDepth = 0;
+
+    // create pointer
+    let currNode = root;
+
+    // Example 3: check edge case for undefined input []
+    if (currNode === null) {
+        return true;
+    }
+
+    // left subtree while loop
+    while (currNode.left !== null) {
+        console.log(leftDepth, currNode.left);
+        // First increment depth count
+        leftDepth += 1;
+        // ****** this is the ACTUAL traversal *******
+        currNode = currNode.left;
+    }
+
+    // in between reset the pointer
+    currNode = root;
+
+    // right subtree while loop
+    while (currNode.right !== null) {
+        console.log(rightDepth, currNode.right);
+        // First increment depth count
+        rightDepth += 1;
+        // ****** this is the ACTUAL traversal *******
+        currNode = currNode.right;
+    }
+
+// recursion allows PAUSE on execution, and USE base-cases to BREAK recursion
+
+    // checking difference in depth between left & right subtree is > than 1
+    return Math.abs(leftDepth - rightDepth) <= 1;
+};
