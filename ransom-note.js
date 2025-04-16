@@ -7,8 +7,9 @@
 // 1 <= ransomNote.length, magazine.length <= 10^5
 // ransomNote, magazine ONLY ALLOWABLE lowercase English letters
 
-
 // edge
+// can lengths of 'ransomeNote' and 'magazine' DIFFER?
+// can we have empty string input arguments for the canConstruct function?
 
 // questions
 
