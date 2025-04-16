@@ -15,6 +15,8 @@
 // -> handle this scenario by ensuring that 'ransomNote' key-values is (<=) (less-than-or-equal-to) the 'magazine' key-values
 // would it be easier to sort the char-arrays?
 // -> after turning the char-strings into char-arrays, then sort them
+// will there be any whitespace?
+// -> No
 
 // edgecases
 // if single-char, just compare if the same, then return boolean
@@ -34,17 +36,26 @@
 const canConstruct = (ransomNote, magazine) => {
     // use ES6 library on Strings built-in operations
 
-    // take the 'magazine' string and split into array of 'chars'
+    // iterate over 'ransomNote' string
+    // split the string into array of 'chars'
+    const ransomArray = ransomNote.split('');
+    console.log('ransom array', ransomArray);
     // sort
+    ransomArray.sort(); // On(logn) // returns mutated OG array
+    console.log('sorted ransom array', ransomArray);
+    // map them to a hashmap
+    // count the #occurences of each char
+
+    // take the 'magazine' string and split into array of 'chars'
+    const magazineArray = magazine.split('');
+    console.log('magazine array', magazineArray);
+    // sort
+    magazineArray.sort();
+    console.log('sorted magazine array', magazineArray);
     // iterate over magazine's char-array
     // map them into a hashmap
     // and count the #occurrences of each char
 
-    // iterate over 'ransomNote' string
-    // split the string into array of 'chars'
-    // sort
-    // map them to a hashmap
-    // count the #occurences of each char
 
     // first check if ALL the keys of 'ransomNote' hashmap
     // exist inside the keys of 'magazine' hashmap
