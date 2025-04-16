@@ -13,6 +13,8 @@
 // -> No (min 1 char)
 // each 'char' in string-param 'magazine' can ONLY be USED ONCE, inside 'ransomNote'
 // -> handle this scenario by ensuring that 'ransomNote' key-values is (<=) (less-than-or-equal-to) the 'magazine' key-values
+// would it be easier to sort the char-arrays?
+// -> after turning the char-strings into char-arrays, then sort them
 
 // edgecases
 // if single-char, just compare if the same, then return boolean
@@ -21,6 +23,7 @@
 // alternative-approaches:
 // solvable using a queue/stack
 // queues-stacks are essentially just lists-arrays
+
 
 /** takes 2 parameters
  * @param {string} ransomNote
@@ -32,15 +35,27 @@ const canConstruct = (ransomNote, magazine) => {
     // use ES6 library on Strings built-in operations
 
     // take the 'magazine' string and split into array of 'chars'
+    // sort
     // iterate over magazine's char-array
-    // and count the #occurrences of each char
     // map them into a hashmap
+    // and count the #occurrences of each char
 
     // iterate over 'ransomNote' string
     // split the string into array of 'chars'
-    // count the #occurences of each char
+    // sort
     // map them to a hashmap
+    // count the #occurences of each char
 
-    // first check if ALL the keys of 'ransomNote' map
-    // exist
+    // first check if ALL the keys of 'ransomNote' hashmap
+    // exist inside the keys of 'magazine' hashmap
+    // -> if not return FALSE
+
+    // after checking the keys, then compare the values
+    // ensure that the values of 'ransomNote' hashmap are LESS THAN or EQUAL to
+    // 'magazine' hashmap's values
+    // -> if YES, return TRUE
+    // -> IF NOT, return false
+
+    // blah
+
 };
