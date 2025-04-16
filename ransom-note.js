@@ -43,8 +43,16 @@ const canConstruct = (ransomNote, magazine) => {
     // sort
     ransomArray.sort(); // On(logn) // returns mutated OG array
     console.log('sorted ransom array', ransomArray);
-    // map them to a hashmap
-    // count the #occurences of each char
+
+    // map them to a hashmap, using a 2-dimentional array, arrays w two elements, each key-value pair is added to the new Map()
+    const ransomHash = new Map();
+    // now iterate over ransomArray, and populate the hashMap w count the #occurences of each char
+
+    for (let letter of ransomArray) {
+        // if () {
+
+        // }
+    }
 
     // take the 'magazine' string and split into array of 'chars'
     const magazineArray = magazine.split('');
@@ -53,9 +61,9 @@ const canConstruct = (ransomNote, magazine) => {
     magazineArray.sort();
     console.log('sorted magazine array', magazineArray);
     // iterate over magazine's char-array
-    // map them into a hashmap
+    // map them into a hashmap, using arrays w two elements, each key-value pair is added to the new Map()
+    const magazineHash = new Map();
     // and count the #occurrences of each char
-
 
     // first check if ALL the keys of 'ransomNote' hashmap
     // exist inside the keys of 'magazine' hashmap
