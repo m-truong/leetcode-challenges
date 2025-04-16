@@ -38,33 +38,52 @@ const canConstruct = (ransomNote, magazine) => {
 
     // iterate over 'ransomNote' string
     // split the string into array of 'chars'
-    const ransomArray = ransomNote.split('');
+    // =====================================>
+        const ransomArray = ransomNote.split('');
     console.log('ransom array', ransomArray);
     // sort
     ransomArray.sort(); // On(logn) // returns mutated OG array
     console.log('sorted ransom array', ransomArray);
 
-    // map them to a hashmap, using a 2-dimentional array, arrays w two elements, each key-value pair is added to the new Map()
+    // =====================================>
+        // map them to a hashmap, using a 2-dimentional array, arrays w two elements, each key-value pair is added to the new Map()
     const ransomHash = new Map();
     // now iterate over ransomArray, and populate the hashMap w count the #occurences of each char
-
     for (let letter of ransomArray) {
-        // if () {
-
-        // }
+        // !! unnecessary since Map.has() already returns boolean
+        // if ransomHash doesn't have the letter, then initialize value to 1
+        if (!ransomHash.has(letter)) {
+            ransomHash.set(letter, 1);
+        } else {
+            ransomHash.set(letter, ransomHash.get(letter) + 1);
+        }
     }
+    console.log('ransom hashmap', ransomHash);
 
+    // =====================================>
     // take the 'magazine' string and split into array of 'chars'
     const magazineArray = magazine.split('');
     console.log('magazine array', magazineArray);
     // sort
     magazineArray.sort();
     console.log('sorted magazine array', magazineArray);
-    // iterate over magazine's char-array
+
+    // =====================================>
+        // iterate over magazine's char-array
     // map them into a hashmap, using arrays w two elements, each key-value pair is added to the new Map()
     const magazineHash = new Map();
     // and count the #occurrences of each char
+    for (let letter of magazineArray) {
+        if (!magazineHash.has(letter)) {
+            magazineHash.set(letter, 1);
+        } else {
+            magazineHash.set(letter, magazineHash.get(letter) + 1);
+        }
+    }
+    console.log('magazine hashmap', magazineHash);
 
+
+    // deliverable:
     // first check if ALL the keys of 'ransomNote' hashmap
     // exist inside the keys of 'magazine' hashmap
     // -> if not return FALSE
