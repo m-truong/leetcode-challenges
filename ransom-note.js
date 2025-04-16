@@ -21,6 +21,7 @@
 // edgecases
 // if single-char, just compare if the same, then return boolean
 // saves trouble of running whole function
+// if the magazine string is less than the ransomNow string; then return false
 
 // alternative-approaches:
 // solvable using a queue/stack
@@ -36,20 +37,25 @@
 const canConstruct = (ransomNote, magazine) => {
     // use ES6 library on Strings built-in operations
 
+    // handle edge1: ransomNote.length > magazine.length;
+    if (ransomNote.length > magazine.length) {
+        return false;
+    }
+
     // iterate over 'ransomNote' string
     // split the string into array of 'chars'
     // =====================================>
-        const ransomArray = ransomNote.split('');
+    const ransomArray = ransomNote.split('');
     console.log('ransom array', ransomArray);
     // sort
     ransomArray.sort(); // On(logn) // returns mutated OG array
     console.log('sorted ransom array', ransomArray);
 
     // =====================================>
-        // map them to a hashmap, using a 2-dimentional array, arrays w two elements, each key-value pair is added to the new Map()
+    // map them to a hashmap, using a 2-dimentional array, arrays w two elements, each key-value pair is added to the new Map()
     const ransomHash = new Map();
     // now iterate over ransomArray, and populate the hashMap w count the #occurences of each char
-    for (let letter of ransomArray) {
+    for (const letter of ransomArray) {
         // !! unnecessary since Map.has() already returns boolean
         // if ransomHash doesn't have the letter, then initialize value to 1
         if (!ransomHash.has(letter)) {
@@ -73,7 +79,7 @@ const canConstruct = (ransomNote, magazine) => {
     // map them into a hashmap, using arrays w two elements, each key-value pair is added to the new Map()
     const magazineHash = new Map();
     // and count the #occurrences of each char
-    for (let letter of magazineArray) {
+    for (const letter of magazineArray) {
         if (!magazineHash.has(letter)) {
             magazineHash.set(letter, 1);
         } else {
@@ -82,18 +88,44 @@ const canConstruct = (ransomNote, magazine) => {
     }
     console.log('magazine hashmap', magazineHash);
 
-
     // deliverable:
     // first check if ALL the keys of 'ransomNote' hashmap
     // exist inside the keys of 'magazine' hashmap
     // -> if not return FALSE
+    const ransomKeys = [...ransomHash.keys()];
+    console.log('all the ransom letters', ransomKeys);
+    const magazineKeys = [...magazineHash.keys()];
+    console.log('all the magazine letters', magazineKeys);
+
+    // must used fixed-iterable-counter loop
+    // just checking the letters of ransomKeys UP TO it's length
+    // just checking if THE NECESSARY LETTERS of ransomNote exist
+    // inside magazineKeys
+    for (let k = 0; k < ransomKeys.length; k++) {
+        if (ransomKeys[k] !== magazineKeys[k]) {
+            return false;
+        }
+    }
+
+    // 'magazine' hashmap's values
+    // repeat converting the Map() into an Iterator-object()
+    const ransomVals = [...ransomHash.values()];
+    console.log('all the ransom letter counts', ransomVals);
+    const magazineVals = [...magazineHash.keys()];
+    console.log('all the magazine letter counts', magazineVals);
 
     // after checking the keys, then compare the values
     // ensure that the values of 'ransomNote' hashmap are LESS THAN or EQUAL to
-    // 'magazine' hashmap's values
+    for (let k = 0; k < ransomVals.length; k++) {
+        if (ransomVals[k] > magazineVals[k]) {
+            // -> IF NOT, return false
+            return false;
+        }
+    }
+
+    // THIS ASSUMES that after catching all the false edgecases
+    // like the above for having not enough occurrences of each unique letter inside magazine string
     // -> if YES, return TRUE
-    // -> IF NOT, return false
-
+    return true;
     // blah
-
 };
