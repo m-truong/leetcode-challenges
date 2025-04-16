@@ -12,11 +12,15 @@
 // can we have empty string input arguments for the canConstruct function?
 // -> No (min 1 char)
 // each 'char' in string-param 'magazine' can ONLY be USED ONCE, inside 'ransomNote'
-// -> handle this scenario by ensuring that 'ransomNote' key-values is (<=) (less than or equal to) the 'magazine' key-values
+// -> handle this scenario by ensuring that 'ransomNote' key-values is (<=) (less-than-or-equal-to) the 'magazine' key-values
 
 // edgecases
 // if single-char, just compare if the same, then return boolean
 // saves trouble of running whole function
+
+// alternative-approaches:
+// solvable using a queue/stack
+// queues-stacks are essentially just lists-arrays
 
 /** takes 2 parameters
  * @param {string} ransomNote
