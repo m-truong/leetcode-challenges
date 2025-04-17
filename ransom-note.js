@@ -88,40 +88,43 @@ const canConstruct = (ransomNote, magazine) => {
     }
     console.log('magazine hashmap', magazineHash);
 
+    // TODO: try implementation of Map.has();
+
     // deliverable:
     // first check if ALL the keys of 'ransomNote' hashmap
     // exist inside the keys of 'magazine' hashmap
     // -> if not return FALSE
-    const ransomKeys = [...ransomHash.keys()];
-    console.log('all the ransom letters', ransomKeys);
-    const magazineKeys = [...magazineHash.keys()];
-    console.log('all the magazine letters', magazineKeys);
+    // const ransomKeys = [...ransomHash.keys()];
+    // console.log('all the ransom letters', ransomKeys);
+    // const magazineKeys = [...magazineHash.keys()];
+    // console.log('all the magazine letters', magazineKeys);
 
     // must used fixed-iterable-counter loop
     // just checking the letters of ransomKeys UP TO it's length
     // just checking if THE NECESSARY LETTERS of ransomNote exist
     // inside magazineKeys
-    for (let k = 0; k < ransomKeys.length; k++) {
-        if (ransomKeys[k] !== magazineKeys[k]) {
-            return false;
-        }
-    }
+    // for (let k = 0; k < ransomKeys.length; k++) {
+    //     if (ransomKeys[k] !== magazineKeys[k]) {
+    //         // TODO: this fails the edgecase of "bg"
+    //         return false;
+    //     }
+    // }
 
     // 'magazine' hashmap's values
     // repeat converting the Map() into an Iterator-object()
-    const ransomVals = [...ransomHash.values()];
-    console.log('all the ransom letter counts', ransomVals);
-    const magazineVals = [...magazineHash.keys()];
-    console.log('all the magazine letter counts', magazineVals);
+    // const ransomVals = [...ransomHash.values()];
+    // console.log('all the ransom letter counts', ransomVals);
+    // const magazineVals = [...magazineHash.values()];
+    // console.log('all the magazine letter counts', magazineVals);
 
     // after checking the keys, then compare the values
     // ensure that the values of 'ransomNote' hashmap are LESS THAN or EQUAL to
-    for (let k = 0; k < ransomVals.length; k++) {
-        if (ransomVals[k] > magazineVals[k]) {
-            // -> IF NOT, return false
-            return false;
-        }
-    }
+    // for (let k = 0; k < ransomVals.length; k++) {
+    //     if (ransomVals[k] > magazineVals[k]) {
+    //         // -> IF NOT, return false
+    //         return false;
+    //     }
+    // }
 
     // THIS ASSUMES that after catching all the false edgecases
     // like the above for having not enough occurrences of each unique letter inside magazine string
