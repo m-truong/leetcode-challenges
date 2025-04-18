@@ -32,7 +32,7 @@
  * @param {string} magazine
  * @return {boolean}
  */
-const canConstruct = (ransomNote, magazine) => {
+const ransomNoteFn = (ransomNote, magazine) => {
     // Edge case: If ransomNote is longer than magazine, return false
     if (ransomNote.length > magazine.length) {
         return false;
