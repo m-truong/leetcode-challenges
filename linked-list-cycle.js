@@ -51,21 +51,31 @@ const hasCycleFn = (head) => {
         return false;
     }
 
+    // check CC#3 for 2nodes with a third-fourth node null
     // this enters the 2 listnode scenario
-    // tracks current listnode
-    let currNodeRef = head.next;
+    if (head && !head.next.next) {
+        return false;
+    }
 
-    // *** This wouldn't work becuz dangerous since could end up with a stack-overflow!
-    // solve the scenario for traditional single-linked-list
-    // while (currNodeRef.next) {
+    // to solve this, need to use the 2-pointer fast/slow approach
+    let slowRefPointer = head;
+    let fastRefPointer = head.next.next; // this is 2x speed in loop
 
-    //     // would have to reassign currNodeRef to the next ListNode
-    //     // this keeps peaking into next node
-    //     currNodeRef = currNodeRef.next;
-    // }
+    // setup iterative loop
 
-    // // if statement to return false?
-    // if (!currNodeRef.next) {
-    //     return false;
-    // }
+
 };
+
+// *** This wouldn't work becuz dangerous since could end up with a stack-overflow!
+// solve the scenario for traditional single-linked-list
+// while (currNodeRef.next) {
+
+//     // would have to reassign currNodeRef to the next ListNode
+//     // this keeps peaking into next node
+//     currNodeRef = currNodeRef.next;
+// }
+
+// // if statement to return false?
+// if (!currNodeRef.next) {
+//     return false;
+// }
