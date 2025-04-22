@@ -62,8 +62,17 @@ const hasCycleFn = (head) => {
     let fastRefPointer = head.next.next; // this is 2x speed in loop
 
     // setup iterative loop
+    while (fastRefPointer && fastRefPointer.next) {
+        // approach recursively
+        if (Object.is(fastRefPointer,slowRefPointer)) {
+            return true;
+        }
+        // reassign fast/slow pointers (i.e. recursive logic)
+        slowRefPointer = slowRefPointer.next;
+        fastRefPointer = fastRefPointer.next.next;
+    }
 
-
+    return false;
 };
 
 // *** This wouldn't work becuz dangerous since could end up with a stack-overflow!
