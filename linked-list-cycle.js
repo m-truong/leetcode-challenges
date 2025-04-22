@@ -30,7 +30,15 @@ const hasCycleFn = (head) => {
     console.log('printing head node', head);
 
     // check the edgecase for 'undefined' head arguments
-    if (!head) {
+    if (!head) { // my first false-gate
         return false;
     }
+    // this breaks the execution (no need for sentinel-node)
+
+    // another edgecase-gate for single head node
+    if (head && !head.next) {
+        return false;
+    }
+
+
 };
