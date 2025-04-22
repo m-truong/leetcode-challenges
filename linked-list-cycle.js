@@ -13,6 +13,17 @@
 // then time-complexity would be O(n) average-linear time
 // the values don't matter, but the val properties of every ListNode can be negative integers
 
+// meat: determine for 2 ListNodes or More, that there's cycle present
+// need to reach the Tail** node
+// tail node is determined by this.next === null
+// this looks like a loop
+// perhaps a while-loop?
+// this would be O(n)
+// consider using temp variable-pointer
+
+// i'll setup scenario for returning true for when the temp-reference-variable for tracking the current ListNode DOES end with this.next===null
+// this would signal a traditional singly-linked-list
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -40,13 +51,21 @@ const hasCycleFn = (head) => {
         return false;
     }
 
-    // meat: determine for 2 ListNodes or More, that there's cycle present
-    // need to reach the Tail** node
-    // tail node is determined by this.next === null
-    // this looks like a loop
-    // perhaps a while-loop?
-    // this would be O(n)
-    // consider using temp variable-pointer
+    // this enters the 2 listnode scenario
+    // tracks current listnode
+    let currNodeRef = head.next;
 
-    // while ()
+    // *** This wouldn't work becuz dangerous since could end up with a stack-overflow!
+    // solve the scenario for traditional single-linked-list
+    // while (currNodeRef.next) {
+
+    //     // would have to reassign currNodeRef to the next ListNode
+    //     // this keeps peaking into next node
+    //     currNodeRef = currNodeRef.next;
+    // }
+
+    // // if statement to return false?
+    // if (!currNodeRef.next) {
+    //     return false;
+    // }
 };
