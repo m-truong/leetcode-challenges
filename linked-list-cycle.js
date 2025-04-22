@@ -41,4 +41,12 @@ const hasCycleFn = (head) => {
     }
 
     // meat: determine for 2 ListNodes or More, that there's cycle present
+    // need to reach the Tail** node
+    // tail node is determined by this.next === null
+    // this looks like a loop
+    // perhaps a while-loop?
+    // this would be O(n)
+    // consider using temp variable-pointer
+
+    // while ()
 };
