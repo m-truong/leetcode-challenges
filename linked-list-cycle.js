@@ -1,11 +1,3 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
 // task:
 // need to detect if there's a cycle
 // input is ALWAYS the head ListNode (warning: can be undefined 'head')
@@ -22,9 +14,23 @@
 // the values don't matter, but the val properties of every ListNode can be negative integers
 
 /**
- * @param
- * @param
- * @return
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
  */
 
-const hasCycleFn = () => {};
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+
+const hasCycleFn = (head) => {
+    console.log('printing head node', head);
+
+    // check the edgecase for 'undefined' head arguments
+    if (!head) {
+        return false;
+    }
+};
