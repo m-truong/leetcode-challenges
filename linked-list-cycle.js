@@ -40,5 +40,5 @@ const hasCycleFn = (head) => {
         return false;
     }
 
-
+    // meat: determine for 2 ListNodes or More, that there's cycle present
 };
