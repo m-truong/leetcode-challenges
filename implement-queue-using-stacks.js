@@ -47,28 +47,31 @@ var MyQueue = function() {
  * @return {void}
  */
 MyQueue.prototype.push = function(x) {
-
+    // very straightforward just enqueue the integer arguments into the enqueue stack
+    this.enqueueStack.push(x);
 };
 
 /**
  * @return {number}
  */
 MyQueue.prototype.pop = function() {
-
+    // little more complicated
 };
 
 /**
  * @return {number}
  */
 MyQueue.prototype.peek = function() {
-
+    // little more complicated
 };
 
 /**
  * @return {boolean}
  */
 MyQueue.prototype.empty = function() {
-
+    // straightforward; just return boolean determing if both arraystacks are empty
+    // which means that the order of the calls for the tests didn't populate the 2 array-stacks
+    return this.enqueueStack.length === 0 && this.dequeueStack.length === 0;
 };
 
 /**
