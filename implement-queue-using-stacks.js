@@ -31,8 +31,15 @@
 // maybe call one array Enqueue? other array dequeue()
 
 
+// requires mastery of 'this' and 'new' keywords
 var MyQueue = function() {
+    // create 2 separate dynamic-array-stacks
 
+    // one is for enqueue'ing new integers when invoking push()
+    this.enqueueStack = [];
+
+    // second if for dequeue'ing the integers when pop() is invoked. the second array-stack is used to retain the FIFO rule for queues.
+    this.dequeueStack = [];
 };
 
 /**
