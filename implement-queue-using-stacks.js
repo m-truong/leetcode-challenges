@@ -56,6 +56,9 @@ MyQueue.prototype.push = function(x) {
  */
 MyQueue.prototype.pop = function() {
     // little more complicated
+    // in order to properly retain the FIFO order of elements for the queue, then this requires popping off the dequeueStack
+    // check if the dequeueStack contains elements, if so, then return them
+    if (this.dequeueStack.length) return this.dequeueStack.pop();
 };
 
 /**
