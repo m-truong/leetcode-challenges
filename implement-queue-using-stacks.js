@@ -71,6 +71,12 @@ MyQueue.prototype.pop = function() {
  */
 MyQueue.prototype.peek = function() {
     // little more complicated
+    // peeking still relies on the dequeueStack()
+    // thus, slice the dequeueStack to make a shallcopy, and return the first and ONLY element of that array
+    // this is new trick, whereby slicing a JS array with a negative index INCLUSIVELY creates a shallow copy from the end of that array
+    if (this.dequeueStack.length) return this.dequeueStack.slice(-1)[0];
+    // if the dequeuStack is empty, we can assume that the dequeue stack should HAVE AT LEAST one integer element pushed inside of it already, since the CONSTRAINTS mention that both pop() and peek() have to be valid calls
+    return this.enqueueStack[0];
 };
 
 /**
