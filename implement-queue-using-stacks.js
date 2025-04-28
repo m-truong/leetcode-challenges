@@ -59,6 +59,11 @@ MyQueue.prototype.pop = function() {
     // in order to properly retain the FIFO order of elements for the queue, then this requires popping off the dequeueStack
     // check if the dequeueStack contains elements, if so, then return them
     if (this.dequeueStack.length) return this.dequeueStack.pop();
+    // now introduce the iterative-loop that'll transfer and depopulate the enqueueStack and populate the dequeueStack, while retaining the FIFO proper-order
+    while (this.enqueueStack.length) this.dequeueStack.push(this.enqueueStack.pop());
+
+    // after the above loop, then the dequeueStack MUST have at least one element to be returned as the first in the Queue, thus return it
+    return this.dequeueStack.pop();
 };
 
 /**
