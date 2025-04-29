@@ -1,3 +1,13 @@
+// task:
+// find WHICH n (integer) is the bad version
+// every version after n will be a 'bad' version
+
+// constraints:
+// bad && n are both only between 1~2,147,483,647
+
+// psuedo:
+//
+
 /**
  * Definition for isBadVersion()
  *
