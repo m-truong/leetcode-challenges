@@ -28,6 +28,8 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-
+        // TODO: write return function to solve.
+        // is this a loop of calling isBadVersion
+        // this has to be Math; use modulo and round up
     };
 };
