@@ -19,6 +19,7 @@
  * }
  */
 
+// this assumes that as long as reach 'p' or 'q' within BST, then return that node since LCA can count towards itself
 /**
  * @param {TreeNode} root
  * @param {TreeNode} p
