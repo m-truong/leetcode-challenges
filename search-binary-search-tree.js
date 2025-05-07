@@ -1,3 +1,13 @@
+// pseudo:
+// binary-search tree: a binary tree is defined as each node having at most 2 left and right TreeNodes
+// if it's named a "search" tree, this it's already 'sorted' and satisfies property, whereby the left child node will be LESS than, and the right tree node will be GREATER than the value of the node
+
+// task:
+// find the node ina BST given the root, and return the subtree that that NODE is connected to
+
+// edgecases:
+
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
