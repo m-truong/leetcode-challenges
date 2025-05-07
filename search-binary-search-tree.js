@@ -5,7 +5,10 @@
 // task:
 // find the node ina BST given the root, and return the subtree that that NODE is connected to
 
-// edgecases:
+// edgecases-constraints:
+// min 1 node [1, 5000]
+// all node.vals are pos+
+// root is a BST: so each node will have at most 2 children nodes, and already sorted left, right
 
 
 /**
