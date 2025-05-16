@@ -24,6 +24,14 @@
 
 // start from within and ...
 
+// edgecases: 
+// minimum 1 row and 1 column (i.e. [[1]])
+// max # rows and columns is 50
+// the actual primitives can be 0 -> 2^16 (but +positive integers)
+// 0 <= sr, sc < imageHeight, imageWidth
+// so the passed inputs sr/sc are separate/independent from the image[][]
+// sr, sc must be within the 0-based index of the 2D array image[][]
+
 /**
  * @param {number[][]} image
  * @param {number} sr
@@ -48,4 +56,22 @@ var floodFill = function(image, sr, sc, color) {
   // imageWidth should be the number of elements WITHIN a 'nested' array
   // this is essentially the 'width' of the image (i.e. columns)
   const imageWidth = image[0].length;
+
+    function dfs (r, c) {
+    if (
+      r < 0 || r >= imageHeight ||
+      c < 0 || c >= imageWidth ||
+      image[r][c] !== originalColorPrimitive
+    ) return;
+
+    image[r][c] = color;
+
+    dfs(r + 1, c); // down
+    dfs(r - 1, c); // up
+    dfs(r, c + 1); // right
+    dfs(r, c - 1); // left
+  }
+
+  dfs(sr, sc);
+  return image;
 };
