@@ -57,15 +57,18 @@ var floodFill = function(image, sr, sc, color) {
   // this is essentially the 'width' of the image (i.e. columns)
   const imageWidth = image[0].length;
 
-    function dfs (r, c) {
+  function dfs(r, c) {
+    // base case
     if (
       r < 0 || r >= imageHeight ||
       c < 0 || c >= imageWidth ||
       image[r][c] !== originalColorPrimitive
     ) return;
 
+    // action step
     image[r][c] = color;
 
+    // 4 recursive calls
     dfs(r + 1, c); // down
     dfs(r - 1, c); // up
     dfs(r, c + 1); // right
