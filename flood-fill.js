@@ -58,7 +58,8 @@ var floodFill = function(image, sr, sc, color) {
   const imageWidth = image[0].length;
 
   function dfs(r, c) {
-    // base case
+    // base case (which includes edgecases)
+    // when row & column numbers are out of bounds
     if (
       r < 0 || r >= imageHeight ||
       c < 0 || c >= imageWidth ||
