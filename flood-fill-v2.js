@@ -27,10 +27,19 @@ const paintFill = (twoDArrayImage, startRowIndex, startColumnIndex, targetColorN
     // check the several edgecases to stop the recursion
     // the edgecases would be when the recursive shift down/up, left/right
     // goes out of bounds, then i need to stop the recursion
+    // a fifth edgecase is when the actual number pixel in the 2D array IS NOT the same as the initial pixel ''number' that needs to be changed
+    // base case
+    if (
+      sr < 0 || sr >= imageHeight ||
+      sc < 0 || sc >= imageWidth ||
+      twoDArrayImage[sr][sc] !== originalPixelNumber
+    ) return;
+
+    // action step
+    //
+
+    // recursive call
   };
-  // base case
-  // action step
-  // recursive call
 
   // invoke the recursive function with the startRowIndex & startColIndex
   recursiveAdjacentPixelFill(startRowIndex, startColumnIndex);

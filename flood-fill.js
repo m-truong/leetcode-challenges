@@ -24,7 +24,7 @@
 
 // start from within and ...
 
-// edgecases: 
+// edgecases:
 // minimum 1 row and 1 column (i.e. [[1]])
 // max # rows and columns is 50
 // the actual primitives can be 0 -> 2^16 (but +positive integers)
