@@ -24,7 +24,9 @@ const paintFill = (twoDArrayImage, startRowIndex, startColumnIndex, targetColorN
 
   // recursion
   const recursiveAdjacentPixelFill = (sr, sc) => {
-
+    // check the several edgecases to stop the recursion
+    // the edgecases would be when the recursive shift down/up, left/right
+    // goes out of bounds, then i need to stop the recursion
   };
   // base case
   // action step
