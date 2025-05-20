@@ -4,6 +4,17 @@
 
 // The island doesn't have "lakes", meaning the water inside isn't connected to the water around the island. One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
 
+// approach:
+// each land cell w value 1 that is adjacent vertically/horizontally to 0 counts towards island perimeter sum
+
+// constraints:
+// shape of grid is rectangular (which means grid.length doesn't have to equal grid[i].length)
+// e.g. [[1,0], [1,0], [1,0]] ==> example of rectangular shape
+// e.g. [[0,1,0]] ===> another rectangle
+// there's only one contiguous connected island
+// minimum of 1 row and col
+// grid[i][j] is 0 or 1
+
 /**
  * @param {number[][]} grid
  * @return {number}
