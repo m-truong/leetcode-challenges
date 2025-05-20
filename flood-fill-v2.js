@@ -28,6 +28,7 @@ const paintFill = (twoDArrayImage, startRowIndex, startColumnIndex, targetColorN
     // the edgecases would be when the recursive shift down/up, left/right
     // goes out of bounds, then i need to stop the recursion
     // a fifth edgecase is when the actual number pixel in the 2D array IS NOT the same as the initial pixel ''number' that needs to be changed
+
     // base case
     if (
       sr < 0 || sr >= imageHeight ||
@@ -36,9 +37,18 @@ const paintFill = (twoDArrayImage, startRowIndex, startColumnIndex, targetColorN
     ) return;
 
     // action step
-    //
+    // ================>
+    // perform action step to change the image pixel to the targetColorNumber
+    // ================>
+    twoDArrayImage[sr][sc] = targetColorNumber;
 
     // recursive call
+    // requires four separate function calls inside itself with the shifted row & columns
+    // call itself inside the function is ===> recursion
+    recursiveAdjacentPixelFill(sr + 1, sc); // down
+    recursiveAdjacentPixelFill(sr - 1, sc); // up
+    recursiveAdjacentPixelFill(sr, sc + 1); // right
+    recursiveAdjacentPixelFill(sr, sc - 1); // left
   };
 
   // invoke the recursive function with the startRowIndex & startColIndex
