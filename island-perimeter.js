@@ -25,4 +25,10 @@
  */
 
 const islandPerimeter = (grid) => {
+    // store important variables
+    const islandWidth = grid[0].length; // get inner array
+    const islandHeight = grid.length; // store outer array length
+    console.log('printing', islandWidth, islandHeight);
+
+
 };
