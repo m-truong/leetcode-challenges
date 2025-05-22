@@ -19,6 +19,9 @@
 // minimum of 1 row and col
 // grid[i][j] is 0 or 1
 
+// Hints:
+// If the next cell is out of boundary or water, then increase the perimeter by 1.
+
 /**
  * @param {number[][]} grid
  * @return {number}
@@ -34,16 +37,17 @@ const islandPerimeter = (grid) => {
     let perimeter; // undefined since declared but not initialized
 
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
-
     const traversalHelper = (arbVar, varArb) => {
         // basecase
 
         // action step
 
         // recursive call
+
     };
 
     // Start
 
     // Output
+    return perimeter;
 };
