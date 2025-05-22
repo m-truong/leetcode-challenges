@@ -28,21 +28,26 @@
  */
 
 const islandPerimeter = (grid) => {
+    // store perimeter
+    let perimeter; // undefined since declared but not initialized
+
     // store important variables
     const islandWidth = grid[0].length; // get inner array
     const islandHeight = grid.length; // store outer array length
     console.log('printing', islandWidth, islandHeight);
 
-    // store perimeter
-    let perimeter; // undefined since declared but not initialized
 
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
-    const traversalHelper = (arbVar, varArb) => {
+    const gridTraversal = (gridRow, gridCol) => {
         // basecase
 
         // action step
 
-        // recursive call
+        // recursive callz
+        gridTraversal(gridRow + 1, gridCol); // down
+        gridTraversal(gridRow - 1, gridCol); // up
+        gridTraversal(gridRow, gridCol - 1); // left
+        gridTraversal(gridRow, gridCol + 1); // right
 
     };
 
