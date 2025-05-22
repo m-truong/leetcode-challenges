@@ -30,5 +30,20 @@ const islandPerimeter = (grid) => {
     const islandHeight = grid.length; // store outer array length
     console.log('printing', islandWidth, islandHeight);
 
+    // store perimeter
+    let perimeter; // undefined since declared but not initialized
 
+    // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
+
+    const traversalHelper = (arbVar, varArb) => {
+        // basecase
+
+        // action step
+
+        // recursive call
+    };
+
+    // Start
+
+    // Output
 };
