@@ -42,19 +42,26 @@ const islandPerimeter = (grid) => {
 
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
     const gridTraversal = (row, column) => {
-        // basecase
+        // base case:
         // requires checking if grid cell is land or water?
         // if out of bounds, end recursion
-        if (row.length) return;
+        if (row < 0 ||
+            row >= islandWidth ||
+            column < 0 ||
+            column >= islandHeight
+        ) return;
 
-        // action step
+        // action step:
         // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
+        // if cell value is 1 && rowIndex === 0, then increment the perimeter
         // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
         // 3) any 1's touching 0's left/right is a perimeter side
         // 4) any 1's touching 0' above/below is a perimeter side
-        // if cell value is 1 &&
+        // now use the row/column indices passed as props to access the grid cells!
 
-        // traversal recursive callz
+
+        // traversal recursive calls:
+        // *** very unique back2back function calls ***
         gridTraversal(row + 1, column); // down
         gridTraversal(row - 1, column); // up
         gridTraversal(row, column - 1); // left
@@ -63,7 +70,7 @@ const islandPerimeter = (grid) => {
     };
 
     // Start
-    gridTraversal(grid[0], grid[0][0])
+    gridTraversal(rowIndex, colIndex);
 
     // Output
     return perimeter;
