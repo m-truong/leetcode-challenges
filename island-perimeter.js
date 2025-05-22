@@ -28,7 +28,7 @@
 
 const islandPerimeter = (grid) => {
     // store perimeter
-    let perimeter; // undefined since declared but not initialized
+    let perimeter = 0; // undefined since declared but not initialized
     console.log('printing'. perimeter);
 
     // store important variables
@@ -42,6 +42,7 @@ const islandPerimeter = (grid) => {
 
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
     const gridTraversal = (row, column) => {
+        console.log(process.argv);
         // base case:
         // requires checking if grid cell is land or water?
         // if out of bounds, end recursion
