@@ -29,34 +29,41 @@
 const islandPerimeter = (grid) => {
     // store perimeter
     let perimeter; // undefined since declared but not initialized
+    console.log('printing'. perimeter);
 
     // store important variables
     const islandWidth = grid[0].length; // get inner array
     const islandHeight = grid.length; // store outer array length
     console.log('printing', islandWidth, islandHeight);
 
+    // store variables for rowIndex and colIndex
+    let rowIndex = 0;
+    let colIndex = 0;
 
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
-    const gridTraversal = (gridRow, gridCol) => {
+    const gridTraversal = (row, column) => {
         // basecase
         // requires checking if grid cell is land or water?
-        // if () return;
+        // if out of bounds, end recursion
+        if (row.length) return;
 
         // action step
         // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
         // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
         // 3) any 1's touching 0's left/right is a perimeter side
         // 4) any 1's touching 0' above/below is a perimeter side
+        // if cell value is 1 &&
 
-        // recursive callz
-        gridTraversal(gridRow + 1, gridCol); // down
-        gridTraversal(gridRow - 1, gridCol); // up
-        gridTraversal(gridRow, gridCol - 1); // left
-        gridTraversal(gridRow, gridCol + 1); // right
+        // traversal recursive callz
+        gridTraversal(row + 1, column); // down
+        gridTraversal(row - 1, column); // up
+        gridTraversal(row, column - 1); // left
+        gridTraversal(row, column + 1); // right
 
     };
 
     // Start
+    gridTraversal(grid[0], grid[0][0])
 
     // Output
     return perimeter;
