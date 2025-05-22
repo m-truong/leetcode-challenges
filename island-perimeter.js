@@ -61,10 +61,11 @@ const islandPerimeter = (grid) => {
         if (row === islandHeight-1 && grid[row][column] === 1) perimeter++;
         // 3) any 1's touching 0's left/right is a perimeter side
         // if neighboring cell value is 0, current cell value is 1, then increment perimeter
-        if (grid[row][column] === 1) perimeter++;
+        if (grid[row][column] === 1 && grid[row][column-1] === 0) perimeter++;
+        if (grid[row][column] === 1 && grid[row][column+1] === 0) perimeter++;
         // 4) any 1's touching 0' above/below is a perimeter side
-        if (grid[row][column] === 1) perimeter++;
-
+        if (grid[row][column] === 1 && grid[row-1][column] === 0) perimeter++;
+        if (grid[row][column] === 1 && grid[row+1][column] === 0) perimeter++;
 
         // traversal recursive calls:
         // *** very unique back2back function calls ***
