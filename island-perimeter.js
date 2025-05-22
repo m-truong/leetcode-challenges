@@ -52,12 +52,18 @@ const islandPerimeter = (grid) => {
         ) return;
 
         // action step:
-        // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
-        // if cell value is 1 && rowIndex === 0, then increment the perimeter
-        // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
-        // 3) any 1's touching 0's left/right is a perimeter side
-        // 4) any 1's touching 0' above/below is a perimeter side
         // now use the row/column indices passed as props to access the grid cells!
+        // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
+        // if rowIndex === 0 && cell value is 1, then increment perimeter
+        if (row === 0 && grid[row][column] === 1) perimeter++;
+        // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
+        // if rowIndex === islandHeight-1 && cell value is 1, then increment perimeter
+        if (row === islandHeight-1 && grid[row][column] === 1) perimeter++;
+        // 3) any 1's touching 0's left/right is a perimeter side
+        // if neighboring cell value is 0, current cell value is 1, then increment perimeter
+        if (grid[row][column] === 1) perimeter++;
+        // 4) any 1's touching 0' above/below is a perimeter side
+        if (grid[row][column] === 1) perimeter++;
 
 
         // traversal recursive calls:
