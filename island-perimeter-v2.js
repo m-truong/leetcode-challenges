@@ -17,3 +17,7 @@ var islandPerimeter = function(grid) {
     console.log('print', perimeter);
     return perimeter;
 };
+
+islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]);
+islandPerimeter([[1]]);
+islandPerimeter([[1,0]]);
