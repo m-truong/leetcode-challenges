@@ -7,9 +7,8 @@
 // grid cell scenarios that sum towards perimeter:
 // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
 // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
-// 3) TBD
-// 4) any 1's touching 0's left/right is a perimeter side
-// 5) any 1's touching 0' above/below is a perimeter side
+// 3) any 1's touching 0's left/right is a perimeter side
+// 4) any 1's touching 0' above/below is a perimeter side
 
 // constraints:
 // shape of grid is rectangular (which means grid.length doesn't have to equal grid[i].length)
@@ -40,8 +39,14 @@ const islandPerimeter = (grid) => {
     // enter recursion, breaking into subroutines to traverse grid vertically/horizontally
     const gridTraversal = (gridRow, gridCol) => {
         // basecase
+        // requires checking if grid cell is land or water?
+        // if () return;
 
         // action step
+        // 1) any 1's at the first/last index of outer array cause it touches the surrounding water
+        // 2) any 1's in-between first/last index of outer array that are at beginning/end of inner array cause it touches the surrounding water
+        // 3) any 1's touching 0's left/right is a perimeter side
+        // 4) any 1's touching 0' above/below is a perimeter side
 
         // recursive callz
         gridTraversal(gridRow + 1, gridCol); // down
