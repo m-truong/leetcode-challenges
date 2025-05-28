@@ -9,8 +9,8 @@
 
 
 // pseudo:
-
-//
+// take a running sum
+// divide & conquer requires finding the mid-point?
 
 /**
  * @param {number[]} nums
