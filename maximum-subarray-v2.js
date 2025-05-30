@@ -15,7 +15,7 @@ const maxSubArray = () => {
 
     // start a for-iterative loop, and since we know we want to iterate through all the elements in the array, until the end, let's have it stop at the total length of the nums[] array
     // start from second element since assuming first element is the maxSum
-    for (let k = 1; k < nums.length; k++) {
+    for (let k = 1; k < lengthArray; k++) {
         // reassign the rolling sum
         currSum = Math.max(nums[k], currSum+nums[k]);
         maxSum = Math.max(maxSum, currSum);
