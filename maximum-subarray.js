@@ -28,7 +28,7 @@ const maxSubArray = () => {
 
     // prefix vs. postfix
     //
-    for (let k = 1 ; k < lengthOfNumberArray ; ++k) {
+    for (let k = 1 ; k < lengthOfNumberArray ; k++) {
         currSum = Math.max(nums[k], currSum + nums[k])
         // accounts for (first number being a negative integer!)
         // that's why you're constantly comparing!
