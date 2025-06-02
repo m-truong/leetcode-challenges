@@ -47,8 +47,10 @@ const validParentheses = (s) => {
         } else {
             return false;
         }
-
     }
+
+    // if empty, then it's valid string
     if (symbStack.length === 0) return true
+    // if not completely empty, then it's not valid string
     if (symbStack.length > 0) return false
 }
