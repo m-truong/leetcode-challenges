@@ -13,10 +13,24 @@
 // lastIndex is an array used to store the last seen position of each character. We use 128 as the size because it covers all ASCII characters. Each index in this array represents a character, and the value at that index represents the last position where we saw that character.
 // start is initialized to 0, representing the start of our sliding window.
 
+
+
 /**
  * @param {string} s
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
+    let n = s.length;
+    let maxLength = 0;
+    let lastIndex = new Map();
 
+    let start = 0;
+    for (let end = 0; end < n; end++) {
+        let currentChar = s[end];
+        start = Math.max(start, lastIndex.get(currentChar) || 0);
+        maxLength = Math.max(maxLength, end - start + 1);
+        lastIndex.set(currentChar, end + 1);
+    }
+
+    return maxLength;
 };
