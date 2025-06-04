@@ -43,6 +43,8 @@ const validParentheses = (s) => {
         if (recentOpenBrace === parenthesesMap.get(c)) {
             // except when it's a closing brace then check the hashmap, and if there's a matching brace then pop it off the stack
             parenthesesStack.pop();
+            // this else-block is required since when checking the current closing parenthese, it must match the correct order of open parentheses most recently placed onto the stack
+            // if the stack isn't emptied in the correct order, then it breaks the algo and returns false and it's an invalid string
         } else {
             return false;
         }
