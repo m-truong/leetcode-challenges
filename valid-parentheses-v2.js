@@ -3,22 +3,43 @@
  * @return {boolean}
  */
 
-const validParentheses = () => {
+const validParentheses = (s) => {
 
     // edgecase: if it starts with a closing brace then return false
+    if (s.length === 1) return false; // just return boolean
+
+    const first = s.charAt(0);
+
+    // if it's not an open brace, then return false
+    if (first !== '(' || first !== '{' || first !== '[') return false;
 
     // store string length as a variable
+    const stringLength = s.length;
 
     // use a stack (dynamic array) to track order of 'open' parentheses
+    const parenthesesStack = [];
+    const parenthesesMap = new Map();
+    // optional: use hashmap key-value pair to map the 'open' brace to corresponding 'closing' brace
+
 
     // iterate through string
+    for (let c of s) {
 
-    // optional: use hashmap key-value pair to map the 'open' brace to corresponding 'closing' brace
+        if (c === '(' || c === '{' || c === '[') {
+            parenthesesStack.push(c); // O(1) push onto RHS end
+            continue;
+        }
+
+        if
+    }
+
 
     // everytime I encounter an open brace, add it to the stack
 
     // except when it's a closing brace then check the hashmap, and if there's a matching brace then pop it off the stack
 
-    //
+    // as we reach the end of the stack, if it's completely empty (i.e. the dynamic array has no opening braces left) then return true
+
+    // if we reach the end and there's opening braces left, then it's an invalid string
 
 }
