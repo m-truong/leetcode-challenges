@@ -8,10 +8,10 @@ const validParentheses = (s) => {
     // edgecase: if it starts with a closing brace then return false
     if (s.length === 1) return false; // just return boolean
 
-    const first = s.charAt(0);
+    // const first = s.charAt(0);
 
     // if it's not an open brace, then return false
-    if (first !== '(' || first !== '{' || first !== '[') return false;
+    if (s.charAt(0) === ')' || s.charAt(0) === '}' || s.charAt(0) === ']') return false;
 
     // store string length as a variable
     // const stringLength = s.length;
