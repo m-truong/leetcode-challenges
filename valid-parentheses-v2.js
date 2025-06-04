@@ -14,11 +14,14 @@ const validParentheses = (s) => {
     if (first !== '(' || first !== '{' || first !== '[') return false;
 
     // store string length as a variable
-    const stringLength = s.length;
+    // const stringLength = s.length;
 
     // use a stack (dynamic array) to track order of 'open' parentheses
     const parenthesesStack = [];
     const parenthesesMap = new Map();
+    parenthesesMap.set(')', '(');
+    parenthesesMap.set('}', '{');
+    parenthesesMap.set(']', '[');
     // optional: use hashmap key-value pair to map the 'open' brace to corresponding 'closing' brace
 
 
@@ -30,7 +33,10 @@ const validParentheses = (s) => {
             continue;
         }
 
-        if
+        // check the most recent char on the stack
+        // notice that the stack increases in length with every iteration
+        const currChar = parenthesesStack[parenthesesStack.length-1]
+        // that means during this iteration, always checking the last most recent char on the stack
     }
 
 
