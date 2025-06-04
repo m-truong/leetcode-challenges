@@ -28,6 +28,7 @@ const validParentheses = (s) => {
     // iterate through string
     for (let c of s) {
 
+        // everytime I encounter an open brace, add it to the stack
         if (c === '(' || c === '{' || c === '[') {
             parenthesesStack.push(c); // O(1) push onto RHS end
             continue;
@@ -35,17 +36,19 @@ const validParentheses = (s) => {
 
         // check the most recent char on the stack
         // notice that the stack increases in length with every iteration
-        const currChar = parenthesesStack[parenthesesStack.length-1]
+        const recentOpenBrace = parenthesesStack[parenthesesStack.length-1];
         // that means during this iteration, always checking the last most recent char on the stack
+
+        // this if block assumes that it's always a closing-brace
+        if (recentOpenBrace === parenthesesMap.get(c)) {
+            // except when it's a closing brace then check the hashmap, and if there's a matching brace then pop it off the stack
+            parenthesesStack.pop();
+        }
     }
 
 
-    // everytime I encounter an open brace, add it to the stack
-
-    // except when it's a closing brace then check the hashmap, and if there's a matching brace then pop it off the stack
-
     // as we reach the end of the stack, if it's completely empty (i.e. the dynamic array has no opening braces left) then return true
-
+    if (parenthesesStack.length === 0) return true;
     // if we reach the end and there's opening braces left, then it's an invalid string
-
+    if (parenthesesStack.length > 0) return false;
 }
