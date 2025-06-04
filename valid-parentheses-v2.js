@@ -43,6 +43,8 @@ const validParentheses = (s) => {
         if (recentOpenBrace === parenthesesMap.get(c)) {
             // except when it's a closing brace then check the hashmap, and if there's a matching brace then pop it off the stack
             parenthesesStack.pop();
+        } else {
+            return false;
         }
     }
 
