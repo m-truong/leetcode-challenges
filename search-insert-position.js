@@ -26,7 +26,11 @@
 // divide that length by 2
 // take that as the middle point
 // compare if the target is less than or greater than half the total numbers of elements in the array
-// and then 
+// and then continue my search with the elements in the beginning half of the array
+// compare if target is < or > than the midpoint
+// then find the next half of that midpoint
+// by dividing by half again
+// 
 const searchInsert = () => {
 
 }
