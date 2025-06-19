@@ -10,7 +10,7 @@
 // then search the rifht half
 // but we cut the search in half
 
-    // q:
+// q:
 
 // constraints:
 // O(logn)
