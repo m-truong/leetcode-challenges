@@ -19,3 +19,10 @@
 // and then repeat that process a set number of times depending on the number (let's call it 'index') inside my JavaScript dynamic array
 // i need to repeat these steps a set number of times until my 'index'
 // ... reaches the input 'n' (the input number type) for this JavaScript function
+
+const fizzBuzz = (n) => {
+  const answer = [];
+  for (let i = 1; i < n; i++) {
+    
+  }
+}
