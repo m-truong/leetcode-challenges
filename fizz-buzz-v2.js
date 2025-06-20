@@ -14,3 +14,6 @@
 // it should be 0
 // if it is 0, then that means it's divisible by 15, 5, 3
 // so then push into my JS dynamic array the strings "Fizz", "Buzz", or "FizzBuzz"
+// and then if it's not divisible by either, convert the number into
+// ... a string, and then push that into the right-end of the dynamic array
+// and then repeat that process a set number of times depending on the number (let's call it 'index') inside my JavaScript dynamic array
