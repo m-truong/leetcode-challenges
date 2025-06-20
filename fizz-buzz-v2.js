@@ -23,6 +23,10 @@
 const fizzBuzz = (n) => {
   const answer = [];
   for (let i = 1; i < n; i++) {
-    
+    if (n % 15 === 0) answer.push('FizzBuzz');
+    else if (n % 5 === 0) answer.push('Fizz');
+    else if (n % 3 === 0) answer.push('Buzz');
+    else answer.push(n.toString());
   }
+  return answer;
 }
