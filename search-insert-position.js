@@ -31,6 +31,7 @@
 // then find the next half of that midpoint
 // by dividing by half again
 // 
+
 const searchInsert = () => {
 
 }
