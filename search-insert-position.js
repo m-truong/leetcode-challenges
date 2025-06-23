@@ -31,9 +31,10 @@
 
 /**
  * search-insert-position
- * @param {}
- * @return {}
+ * @param {numbers[]} nums[]
+ * @param {number} target
+ * @return {number}
  */
-const searchInsert = () => {
-
+const searchInsert = (nums) => {
+    // get length of nums[] array inside a dynamic-variable
 }
