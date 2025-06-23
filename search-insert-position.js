@@ -36,5 +36,13 @@
  * @return {number}
  */
 const searchInsert = (nums) => {
-    // get length of nums[] array inside a dynamic-variable
+    // start a loop to repeat the mid-point search
+
+    // get the middle index of the array
+    let mid = Math.floor(nums.length / 2);
+
+    // compare if the element is < or > than target
+    let currentNum = nums[mid];
+    // if it's less than, then re-assign mid to elem at index +1 than current mid-value
+    // if it's more than, then re-assign mid to elem at index -1 than current mid-value
 }
