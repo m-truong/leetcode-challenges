@@ -1,19 +1,13 @@
-/**
- * search-insert-position
- * @param {}
- * @return {}
- */
 // Task:
 // Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 // You must write an algorithm with O(log n) runtime complexity.
 
-// constraints:
+// Constraints:
 // O(logn)
 // min [1] element in array
 // can have large neg. numbers
 // no dups (removes edgecase (ordered))
 // target (integer) WILL exist in nums[i] (removes EC)
-
 
 // Pseudo:
 // binary search
@@ -33,6 +27,11 @@
 // by dividing by half again
 //
 
+/**
+ * search-insert-position
+ * @param {}
+ * @return {}
+ */
 const searchInsert = () => {
 
 }
