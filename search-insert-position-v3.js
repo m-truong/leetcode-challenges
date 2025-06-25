@@ -5,3 +5,7 @@
  * @m-truong
  */
 
+// implement binary-search window algo
+var searchInsert = (nums, target) => {
+    // store two pointers
+}
