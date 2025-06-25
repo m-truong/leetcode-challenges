@@ -13,4 +13,7 @@ var searchInsert = (nums, target) => {
 
     // general approach/pseudo:
     // to redetermine the mid-point between the low and high pointer variables indicating the ends of the integer array
+    // i must loop the math for determining the middle index of the dynamic array
+    // all while, being mindful of the odd/even lengthed edgecases scenarios ofr the nums[] dynamic array
+
 }
