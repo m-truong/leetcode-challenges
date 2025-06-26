@@ -13,7 +13,14 @@ const searchInsert = (nums, target) => {
     // until the target is found
     // and move the sliding window, based on if the target is probably located either to the right or the left of the calculated middle index
     while (lowPointer < highPointer) {
-
+        //
+        let middleIndex = lowPointer + Math.floor((highPointer-lowPointer)/2);
+        //
+        if (target > nums[middleIndex]) {
+            lowPointer = middleIndex + 1
+        } else {
+            highPointer = middleIndex
+        }
     }
-
+    return lowPointer;
 }
