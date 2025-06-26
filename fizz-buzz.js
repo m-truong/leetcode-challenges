@@ -6,7 +6,7 @@
  * @return {string[]}
  */
 
-const fizzBuzz = () => {
+const fizzBuzz = (n) => {
   const res = [];
     for (let i = 1; i <= n; i++) {
         if (i % 15 === 0) res.push("FizzBuzz");
