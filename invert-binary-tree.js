@@ -83,10 +83,14 @@ var invertTree = function(root) {
 
 
     console.log('here ===> root',   JSON.stringify(root));
+    // base case
     if (root === null) { return root; }
+    // always store the left first with DFS when it's sorted already
     const leftNode = root.left;
     root.left = invertTree(root.right);
     root.right = invertTree(leftNode);
+    // always remember that recursion calls never get resolved
+    // ... only until ther recursive call returns itself, and then the left and right child TreeNodes get swapped (ie. reversed)
     return root;
 
 
