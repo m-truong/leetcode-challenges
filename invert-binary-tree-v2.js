@@ -30,7 +30,7 @@ const invertTree = (root) => {
 
     // recursive DFS function call
     root.left = invertTree(root.right);
-    root.right = invertTree(root.left);
+    root.right = invertTree(leftNode);
 
     // then Action
     return root;
