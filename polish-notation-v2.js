@@ -11,5 +11,8 @@ exports.calculate = function(expression) {
     // Reasoning:
     // since this 'alternative' prefix notation of performing math relies on prefixing the numbers (i.e. operands) with their respective operators
     // this requirement lends itself towards using a stack-approach implemented with a JS dynamic array
+    // so I should turn the string expression into an array of individual characters
+    // if I use an array, I can individually pop off each character and determine if it's an 'operator' or 'operand'
+    // Using a stack-approach (i.e. dynamic array) provides an efficient time-complexity way of getting the symbol, since it's only O(1) to .pop() each element off the right-end of the array
 
 };
