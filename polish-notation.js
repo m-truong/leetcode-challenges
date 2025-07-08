@@ -3,6 +3,8 @@
 exports.calculate = function(expression) {
 	if (!expression) return 0;
 
+    // TODO: practice using the JS built-in methods
+    // Need to memorize them
 	const tokens = expression.split(" ").reverse();
 
 	function evaluate() {
@@ -34,5 +36,6 @@ exports.calculate = function(expression) {
 		}
 	}
 
+    // the very first invocation occurs when my evaluate() function gets returned
 	return evaluate();
 };
