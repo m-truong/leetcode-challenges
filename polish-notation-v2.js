@@ -60,7 +60,7 @@ exports.calculate = function(expression) {
             case "/":
                 return left / right;
             default:
-                return `Unexpected token ${token}`;
+                throw new Error(`Unsupported operator: ${token}`);
         }
     }
 
