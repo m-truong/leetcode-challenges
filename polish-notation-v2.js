@@ -36,6 +36,34 @@ exports.calculate = function(expression) {
         const token = tokens.pop();
 
         // since we need to know the identity of the character, we need to setup a base-case that'll trigger an early return when the char is a number (i.e. operand)
+        if (!isNaN(token)) {
+            return parseFloat(token);
+        }
 
+        // ** recusrive call of calling the same evaluate() function itself, within the evaluate() function
+        // this will pop off each char off the stack and store their values in a 'left' and 'right' variable
+        // when these recursive calls return, they'll store the values (when it's a number) into the left-right variables to be used in the computation of the addition, subtraction, multiplication, and division action-steps
+        const left = evaluate();
+        const right = evaluate();
+
+        // action step
+        // so if the characters are numbers then they'll return, and the call stack will go back to the earliest call to evaluate(), and it'll take those numbers to be used in the action-step
+        // which is to either add, subtract, divide, or multiple depending on the identity of the token (when it's an operator)
+
+        switch (token) {
+            case "+":
+                return left + right;
+            case "-":
+                return left - right;
+            case "*":
+                return left * right;
+            case "/":
+                return left / right;
+            default:
+                return `Unexpected token ${token}`;
+        }
     }
+
+    // finally, return the evaluate() recursive function
+    return evalute();
 };
