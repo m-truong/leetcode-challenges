@@ -21,6 +21,21 @@
 // app/calculator.js
 
 exports.calculate = function(expression) {
+    // this outer logic should setup everything for the inner function
     // edgecase for a falsy string expression
+    if (!expression) { return 0 };
 
+    // turn the string expression into an array
+    const tokens = expression.split(" ").reverse();
+
+    // declare a nested inner JS function to be returned & invoked as the return of the current calculator() outer function
+    // the inner recursive function will handle the actual computation
+
+    function evaluate() {
+        // firstly, pop each character off the stack
+        const token = tokens.pop();
+
+        // since we need to know the identity of the character, we need to setup a base-case that'll trigger an early return when the char is a number (i.e. operand)
+
+    }
 };
