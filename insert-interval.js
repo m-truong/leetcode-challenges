@@ -5,3 +5,14 @@
  * Return intervals after the insertion.
  * Note that you don't need to modify intervals in-place. You can make a new array and return it.
  */
+
+// javascript function declaration
+/**
+ *
+ * @param {number[][]} intervals
+ * @param {number[]} newInterval
+ * @return {number[][]}
+ */
+var insert = function solveInsertInterval(intervals, newInterval) {
+
+}
