@@ -24,7 +24,22 @@ var merge = function(intervals) {
     intervals.sort((a, b) => a[0] - b[0]);
 
     // create a dynamic array called merged
+    // since original problem doesn't require returning the original 2D array
+    // I can now just create a new array and iterate over the original 2D array and push each nested interval
+    // ...into the new dynamic array, but after 'merging' or reassigning the the end(i) number
+    // ...if an overlap in the range of numbers is detected
     let merged = [];
+
+    // because the original intervals 2D array is now already sorted
+    // i can now just compare the latest pushed
+    // for (let interval of intervals) {
+    //     if () {
+
+    //     } else {
+
+    //     }
+
+    // }
 
     // at the very end, return an array of the non-overlapping intervals that cover all the intervals in the input.
     return merged;
