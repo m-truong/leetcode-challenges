@@ -53,11 +53,25 @@ function frequencyCounter() {
  * useful for cutting down search in a 'sorted' array in half
  * especially if it has 'monotonic' properties of increasing/decreasing in certain direction
  */
+function binarySearch() {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        // adjust boundaries
+    }
+}
 
 /**
  * 6. Recursion // Backtracking
  * useful for problems requiring finding 'all solutions' to a problem
  */
+function backtrack(path, choices) {
+    if (goal === reached) result.push(path);
+    for (let choice of choices) {
+        backtrack(path + choice, updatedChoices);
+    }
+}
 
 /**
  * 7. 'Greedy' Algorithm
@@ -69,6 +83,13 @@ function frequencyCounter() {
  * useful for 'overlapping subproblems'
  * think 'memoization'
  */
+function dynamicProgramming() {
+    const dp = new Array(n).fill(0);
+    dp[0] = base;
+    for (let i = 1; i < n; i++) {
+        dp[i] = some_relation(dp[i - 1], ...);
+    }
+}
 
 /**
  * 'Graph Traversal' (via DFS/BFS)
