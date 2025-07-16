@@ -14,7 +14,6 @@ function slidingWindow() {
  * 2. Two Pointers
  * using two variables, and useful when comparing both elements at both ends of a sorted array
  */
-
 function twoPointers() {
     let left = 0;
     let right = arr.length - 1;
