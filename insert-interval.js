@@ -19,7 +19,9 @@
 
 // psuedo:
 // the key is to understand what 'overlaps' means in the context of the algo question
-// looking at the
+// looking at the example test cases it seems like I can visualize these intervals more like a [range]
+// It's not just a start number and end number, it's more like a range determined by the start and end number primitives inside the JS tuple
+// the priority and trick to remember is that I want to insert the new start and end values of the newInterval, in such a way, that it's inclusive of the entire range that's specified by the overlapping intervals
 
 // javascript function declaration
 /**
