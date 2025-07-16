@@ -2,21 +2,51 @@
  * 1. Sliding Window
  * useful for processing 'subarray/substrings' and calculating the 'maximum' or 'sum'
  */
+function slidingWindow() {
+    let windowStart = 0;
+    let maxSum = 0;
+    for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    // expand window, maybe shrink if needed
+    }
+}
 
 /**
  * 2. Two Pointers
  * using two variables, and useful when comparing both elements at both ends of a sorted array
  */
 
+function twoPointers() {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left < right) {
+      // compare and move pointers
+    }
+}
+
 /**
  * 3. Fast & Slow Pointers
  * useful for detecting cycles in a linked list
  */
+function fastAndSlowPointers() {
+    let slow = head;
+    let fast = head;
+    while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+}
 
 /**
  * 4. HashMap ~ Frequency counter
  * useful for 'counting'
+ * useful to memorize the MDN Map() static methods
  */
+function frequencyCounter() {
+    const map = new Map();
+    for (let char of str) {
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+}
 
 /**
  * 5. Binary Search
