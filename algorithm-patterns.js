@@ -13,3 +13,15 @@
  * useful for detecting cycles in a linked list
  */
 
+/**
+ * 4. HashMap ~ Frequency counter
+ * useful for 'counting'
+ */
+
+/**
+ * 5. Binary Search
+ * useful for cutting down search in a 'sorted' array in half
+ * especially if it has 'monotonic' properties of increasing/decreasing in certain direction
+ */
+
+
