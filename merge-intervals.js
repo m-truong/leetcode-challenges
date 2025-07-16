@@ -32,14 +32,20 @@ var merge = function(intervals) {
 
     // because the original intervals 2D array is now already sorted
     // i can now just compare the latest pushed
-    // for (let interval of intervals) {
-    //     if () {
+    for (let interval of intervals) {
+        // using an || expression, I can catch the first iteration edgecase of pushing the very first interval when the new dynamic merged array is empty
+        // then after the first iteration, this guarantees there's at least one tuple interval inside the new dynamic merged array
+        // ...then compare if the end(i) range number of the latest pushed interval is less than the current tuple interval's start number
+        // then there's NO overlap, so simple push it into the new dynamic 'merged' array
+        if (merged.length === 0 || merged[merged.length-1][1] < interval[0]) {
+            merged.push(interval);
+        } else {
+            // this is an interesting else statement
+            //
+            console.log('hi')
+        }
 
-    //     } else {
-
-    //     }
-
-    // }
+    }
 
     // at the very end, return an array of the non-overlapping intervals that cover all the intervals in the input.
     return merged;
