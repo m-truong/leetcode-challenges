@@ -87,7 +87,7 @@ function dynamicProgramming() {
     const dp = new Array(n).fill(0);
     dp[0] = base;
     for (let i = 1; i < n; i++) {
-        dp[i] = some_relation(dp[i - 1], ...);
+        // dp[i] = some_relation(dp[i - 1], ...);
     }
 }
 
