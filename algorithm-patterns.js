@@ -24,4 +24,24 @@
  * especially if it has 'monotonic' properties of increasing/decreasing in certain direction
  */
 
+/**
+ * 6. Recursion // Backtracking
+ * useful for problems requiring finding 'all solutions' to a problem
+ */
 
+/**
+ * 7. 'Greedy' Algorithm
+ * useful for when 'local' optimal solution is best global solution
+ */
+
+/**
+ * 8. 'Dynamic Programming'
+ * useful for 'overlapping subproblems'
+ * think 'memoization'
+ */
+
+/**
+ * 'Graph Traversal' (via DFS/BFS)
+ * DFS: use recursion or stack
+ * BFS: use queue
+ */
