@@ -18,5 +18,14 @@ var merge = function(intervals) {
     // use bracket notation to access the first elements of the first interval and the next interval
     // taking the difference, and whether
     // MDN: To memorize this, remember that (a, b) => a - b sorts numbers in ascending order.
+    // A negative value indicates that a should come before b. (i.e. 4-5 = -1)
+    // A positive value indicates that a should come after b. (i.e. 4 > 5)
+    // Zero or NaN indicates that a and b are considered equal. (i.e. 4 - 4 = 0)
     intervals.sort((a, b) => a[0] - b[0]);
+
+    // create a dynamic array called merged
+    let merged = [];
+
+    // at the very end, return an array of the non-overlapping intervals that cover all the intervals in the input.
+    return merged;
 }
