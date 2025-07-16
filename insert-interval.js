@@ -23,6 +23,9 @@
 // It's not just a start number and end number, it's more like a range determined by the start and end number primitives inside the JS tuple
 // the priority and trick to remember is that I want to insert the new start and end values of the newInterval, in such a way, that it's inclusive of the entire range that's specified by the overlapping intervals
 
+// Goal:
+// To achieve this, we take the maximum of the end of the first interval and the end of the new interval, as well as the minimum of the start of the first interval and the start of the new interval.
+
 // javascript function declaration
 /**
  *
