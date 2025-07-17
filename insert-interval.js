@@ -38,4 +38,11 @@ var insert = function solveInsertInterval(intervals, newInterval) {
     let inserted = [];
 
     // approach is to use binary search; but note that finding the middle index of any list-like structure depeneds on if it's odd or even length
+    // always remember, that an odd-length list-like structure, will always give me the exact midpoint since arrays are (zero-based index)
+    let midIndex = Math.floor(intervals.length/2);
+
+    // but an even length array will be different
+    // calculating the midIndex of an even-length array will result in 2 midpoints
+    // ...one either a leftMid or a rightMid
+
 }
