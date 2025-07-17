@@ -34,5 +34,6 @@
  * @return {number[][]}
  */
 var insert = function solveInsertInterval(intervals, newInterval) {
-
+    // first, instantiate new array using the array literal shorthand[] version of new Array()
+    let inserted = [];
 }
