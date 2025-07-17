@@ -34,15 +34,51 @@
  * @return {number[][]}
  */
 var insert = function solveInsertInterval(intervals, newInterval) {
-    // first, instantiate new array using the array literal shorthand[] version of new Array()
-    let inserted = [];
+    // If the intervals vector is empty, return an array containing the newInterval
+    if (intervals.length === 0) {
+        return [newInterval];
+    }
+
+    let n = intervals.length;
+    let target = newInterval[0];
+    let left = 0,
+    right = n - 1;
 
     // approach is to use binary search; but note that finding the middle index of any list-like structure depeneds on if it's odd or even length
     // always remember, that an odd-length list-like structure, will always give me the exact midpoint since arrays are (zero-based index)
-    let midIndex = Math.floor(intervals.length/2);
-
     // but an even length array will be different
     // calculating the midIndex of an even-length array will result in 2 midpoints
     // ...one either a leftMid or a rightMid
 
+    // Binary search to find the position to insert newInterval
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (intervals[mid][0] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    // Insert newInterval at the found position
+    intervals.splice(left, 0, newInterval);
+
+    // Merge overlapping intervals
+    // first, instantiate new array using the array literal shorthand[] version of new Array()
+    let res = [];
+
+    for (let interval of intervals) {
+        // If res is empty or there is no overlap, add the interval to the result
+        if (res.length === 0 || res[res.length - 1][1] < interval[0]) {
+            res.push(interval);
+            // If there is an overlap, merge the intervals by updating the end of the last interval in res
+        } else {
+            res[res.length - 1][1] = Math.max(
+                res[res.length - 1][1],
+                interval[1],
+            );
+        }
+    }
+
+    return res;
 }
