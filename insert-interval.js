@@ -36,4 +36,6 @@
 var insert = function solveInsertInterval(intervals, newInterval) {
     // first, instantiate new array using the array literal shorthand[] version of new Array()
     let inserted = [];
+
+    // approach is to use binary search; but note that finding the middle index of any list-like structure depeneds on if it's odd or even length
 }
