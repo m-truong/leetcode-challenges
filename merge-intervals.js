@@ -41,12 +41,18 @@ var merge = function(intervals) {
             merged.push(interval);
         } else {
             // this is an interesting else statement
-            //
-            console.log('hi')
+            // so this else-block will handle the OVERLAP scenario of when the 'end' number of the current interval is >= the 'start' of the next intervals range
+            // but since the else block is automatically enterered since it's part of the if-block, then we can assume that it's greater than or equal
+            // in that scenario, then I would want to replace the end ranger number of the latest interval inside the 'merged' new dynamic array with the maximum between the 'end' numbers of the current tuple in the new dynamic array, and the current interval
+            // by doing that, then I've expanded the interval range, essentially merging the current interval
+            // and then i return a 'merged' 2D array with non-overlapping tuples
+            // Note: always indent for readability!
+            merged[merged.length-1][1] = Math.max(
+                merged[merged.length-1][1],
+                interval[1]
+            );
         }
-
     }
-
     // at the very end, return an array of the non-overlapping intervals that cover all the intervals in the input.
     return merged;
 }
