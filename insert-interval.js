@@ -35,11 +35,16 @@
  */
 var insert = function solveInsertInterval(intervals, newInterval) {
     // If the intervals vector is empty, return an array containing the newInterval
-    if (intervals.length === 0) {
+    // this covers the edgecase for an empty intervals outer array
+    // so just return an array literal with the newInterval nested inside it
+    // create a number variable to store the intervals length
+    let n = intervals.length;
+    if (n === 0) {
         return [newInterval];
     }
 
-    let n = intervals.length;
+    // I need to store the beginning start value for the new interval that needs to be inserted
+    // this is crucial because in the InsertIntervals problem this determines if there's any overlap and where it should be inserted into the existing 2D array
     let target = newInterval[0];
     let left = 0,
     right = n - 1;
